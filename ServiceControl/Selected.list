@@ -1,0 +1,14 @@
+﻿#Esta lista contiene los Nombres de los servicios que se 
+#agregaran automaticamente a la lista de seleccionados.
+
+#SQL Server (ALTAIRSQL)
+MSSQL$ALTAIRSQL
+
+#SQL Server CEIP service (ALTAIRSQL)
+SQLTELEMETRY$ALTAIRSQL
+
+#SQL Server Launchpad (ALTAIRSQL)
+MSSQLLaunchpad$ALTAIRSQL
+
+#SQL Server Reporting Services (ALTAIRSQL)
+ReportServer$ALTAIRSQL

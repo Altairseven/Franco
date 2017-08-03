@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5CE31C34-CE0F-4D4F-8971-2A2F1170C1CC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ideas_Programacion</RootNamespace>
+    <AssemblyName>Ideas Programacion</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Syncfusion.Grid.Base, Version=15.2460.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Windows, Version=15.2460.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Shared.Base, Version=15.2460.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Windows, Version=15.2460.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Get_Forms.cs" />
+    <Compile Include="Forms\Ideas_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ideas_Main.Designer.cs">
+      <DependentUpon>Ideas_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Numeros\Numerito Loco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Numeros\Numerito Loco.Designer.cs">
+      <DependentUpon>Numerito Loco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Database_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Database_Form.Designer.cs">
+      <DependentUpon>Database_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\EmpresaApp_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\EmpresaApp_Form.Designer.cs">
+      <DependentUpon>EmpresaApp_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Files_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Files_Form.Designer.cs">
+      <DependentUpon>Files_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Juegos_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Juegos_Form.Designer.cs">
+      <DependentUpon>Juegos_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Hilos_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Hilos_Form.Designer.cs">
+      <DependentUpon>Hilos_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Media_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Media_Form.Designer.cs">
+      <DependentUpon>Media_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Numeros_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Numeros_Form.Designer.cs">
+      <DependentUpon>Numeros_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Red_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Red_Form.Designer.cs">
+      <DependentUpon>Red_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Textos_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Textos_Form.Designer.cs">
+      <DependentUpon>Textos_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\Web_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\Web_Form.Designer.cs">
+      <DependentUpon>Web_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Texto\Remove Vocales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Texto\Remove Vocales.Designer.cs">
+      <DependentUpon>Remove Vocales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Ideas_Main.resx">
+      <DependentUpon>Ideas_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Templates\Textos_Form.resx">
+      <DependentUpon>Textos_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Texto\Remove Vocales.resx">
+      <DependentUpon>Remove Vocales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Gestion\Gestion.csproj">
+      <Project>{0a281108-e5cb-4670-b1b5-d25284c1793e}</Project>
+      <Name>Gestion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
