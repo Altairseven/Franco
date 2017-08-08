@@ -53,6 +53,13 @@ namespace Gestion {
                 exceptions.Add("EnClasesForm");
                 exceptions.Add("OwnForm");
                 exceptions.Add("MainForm");
+
+            //Formularios que son hijos de otros formualarios, 
+            //y por ende no deberian aparecer en el main form:
+                
+                exceptions.Add("ABM_Ficha_Busqueda_Cliente");
+
+
             return exceptions;
         }
 

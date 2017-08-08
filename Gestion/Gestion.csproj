@@ -178,6 +178,12 @@
     <Compile Include="Forms\AA Test.Designer.cs">
       <DependentUpon>AA Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ABM_Ficha_Busqueda_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ABM_Ficha_Busqueda_Cliente.Designer.cs">
+      <DependentUpon>ABM_Ficha_Busqueda_Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ABM_Grilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,12 @@
     <Compile Include="Forms\File_R_W.Designer.cs">
       <DependentUpon>File_R_W.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ABM_Ficha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ABM_Ficha.Designer.cs">
+      <DependentUpon>ABM_Ficha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\linq_test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +334,12 @@
     <Compile Include="Forms\Password_Salt_And_Hash.Designer.cs">
       <DependentUpon>Password_Salt_And_Hash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Prueba_ado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +351,12 @@
     </Compile>
     <Compile Include="Forms\Prueba_ado2.Designer.cs">
       <DependentUpon>Prueba_ado2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Raiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Raiz.Designer.cs">
+      <DependentUpon>Raiz.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Suck It Java.cs">
       <SubType>Form</SubType>
@@ -385,6 +409,9 @@
     <EmbeddedResource Include="Components\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ABM_Ficha_Busqueda_Cliente.resx">
+      <DependentUpon>ABM_Ficha_Busqueda_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ABM_Grilla.resx">
       <DependentUpon>ABM_Grilla.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +454,9 @@
     <EmbeddedResource Include="Forms\File_R_W.resx">
       <DependentUpon>File_R_W.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ABM_Ficha.resx">
+      <DependentUpon>ABM_Ficha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\linq_test.resx">
       <DependentUpon>linq_test.cs</DependentUpon>
     </EmbeddedResource>
@@ -454,11 +484,17 @@
     <EmbeddedResource Include="Forms\Password_Salt_And_Hash.resx">
       <DependentUpon>Password_Salt_And_Hash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Prueba_ado.resx">
       <DependentUpon>Prueba_ado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Prueba_ado2.resx">
       <DependentUpon>Prueba_ado2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Raiz.resx">
+      <DependentUpon>Raiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Suck It Java.resx">
       <DependentUpon>Suck It Java.cs</DependentUpon>
@@ -555,7 +591,20 @@
     <Content Include="Resources\pencil.png" />
     <Content Include="Resources\Profile blurred.png" />
     <Content Include="Resources\profile.png" />
-    <Content Include="Resources\sign-error.png" />
+    <None Include="Resources\raiz.png" />
+    <None Include="Resources\sign-delete.png" />
+    <None Include="Resources\trashcan.png" />
+    <None Include="Resources\sign-up.png" />
+    <None Include="Resources\sign-sync.png" />
+    <None Include="Resources\sign-right.png" />
+    <None Include="Resources\sign-question.png" />
+    <None Include="Resources\sign-left.png" />
+    <None Include="Resources\sign-info.png" />
+    <None Include="Resources\sign-down.png" />
+    <None Include="Resources\sign-error.png" />
+    <None Include="Resources\sign-error1.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\sign-add.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
