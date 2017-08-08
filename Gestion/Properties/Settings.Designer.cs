@@ -26,10 +26,11 @@ namespace Gestion.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FRANCO-NB\\ALTAIRSQL;Initial Catalog=Gestion;Integrated Security=True")]
-        public string GestionConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FRANCO-ROG\\ALTAIRSQL;Initial Catalog=Gestion;Integrated Security=True" +
+            "")]
+        public string GestionMSSQL {
             get {
-                return ((string)(this["GestionConnectionString1"]));
+                return ((string)(this["GestionMSSQL"]));
             }
         }
     }

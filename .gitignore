@@ -22,6 +22,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 Binaries/
+WUP Test/bin
+Gestion/bin
 
 # Visual Studio 2015 cache/options directory
 .vs/

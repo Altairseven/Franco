@@ -12,5 +12,6 @@ namespace Gestion.Forms {
         public culo() {
             InitializeComponent();
         }
+
     }
 }

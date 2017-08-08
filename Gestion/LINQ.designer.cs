@@ -51,7 +51,7 @@ namespace Gestion
     #endregion
 		
 		public LINQDataContext() : 
-				base(global::Gestion.Properties.Settings.Default.GestionConnectionString1, mappingSource)
+				base(global::Gestion.Properties.Settings.Default.GestionMSSQL, mappingSource)
 		{
 			OnCreated();
 		}

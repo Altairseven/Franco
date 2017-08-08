@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Gestion" Class="LINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=FRANCO-NB\ALTAIRSQL;Initial Catalog=Gestion;Integrated Security=True" SettingsObjectName="Gestion.Properties.Settings" SettingsPropertyName="GestionConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=FRANCO-NB\ALTAIRSQL;Initial Catalog=Gestion;Integrated Security=True" SettingsObjectName="Gestion.Properties.Settings" SettingsPropertyName="GestionMSSQL" Provider="System.Data.SqlClient" />
   <Table Name="dbo.clientes" Member="clientes">
     <Type Name="cliente">
       <Column Name="numclie" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

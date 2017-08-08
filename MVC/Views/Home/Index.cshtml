@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        
+    });
+
+    function Reset() {
+        $("#testForm").reset();
+    };
+
+    function Get() {
+        debugger;
+        $.ajax({
+            type: "POST",
+            url: '<%= Url.Action("GetEntity", Home") %>',
+            //url: '../Home/GetEntity',
+            success: function (data) {
+                debugger;
+                $("#ID").val(data.ID);
+                $("#USERNAME").val(data.USERNAME);
+
+            },
+            error: function (err, e) {
+                alert("asdasdsad");
+            }
+        });
+
+
+    };
+
+    function SET() {
+
+    };
+
+</script>
+
+
+<form id="testForm">
+    <table id="table" style="margin-top: 30px;">
+        <tr>
+            <td>
+                <button onclick="Reset()">RESET</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="Get()">GET</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ID:
+            </td>
+            <td>
+                <input type="text" id="ID" name="ID"/> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                USERNAME:
+            </td>
+            <td>
+                <input type="text" id="USERNAME" name="USERNAME" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                PASSWORD:
+            </td>
+            <td>
+                <input type="text" id="PASSWORD" name="PASSWORD" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SALT:
+            </td>
+            <td>
+                <input type="text" id="SALT" name="SALT" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                USERFULLNAME:
+            </td>
+            <td>
+                <input type="text" id="USERFULLNAME" name="USERFULLNAME" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                EMAIL:
+            </td>
+            <td>
+                <input type="text" id="EMAIL" name="EMAIL" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                LASTLOGIN:
+            </td>
+            <td>
+                <input type="text" id="LASTLOGIN" name="LASTLOGIN" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ACCOUNTTYPE:
+            </td>
+            <td>
+                <input type="text" id="ACCOUNTTYPE" name="ACCOUNTTYPE" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="Set()">SET</button>
+            </td>
+        </tr>
+    </table>
+</form>
