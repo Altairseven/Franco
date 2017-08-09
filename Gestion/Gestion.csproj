@@ -226,6 +226,12 @@
     <Compile Include="Forms\DD_arbolMenu_Propio.Designer.cs">
       <DependentUpon>DD_arbolMenu_Propio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dock_Form_As_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dock_Form_As_Panel.Designer.cs">
+      <DependentUpon>Dock_Form_As_Panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ejemplo_for.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +382,12 @@
     <Compile Include="Forms\Templates\OwnForm.Designer.cs">
       <DependentUpon>OwnForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Teorema del Resto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Teorema del Resto.Designer.cs">
+      <DependentUpon>Teorema del Resto.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -432,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DD_arbolMenu_Propio.resx">
       <DependentUpon>DD_arbolMenu_Propio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dock_Form_As_Panel.resx">
+      <DependentUpon>Dock_Form_As_Panel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ejemplo_for.resx">
       <DependentUpon>ejemplo_for.cs</DependentUpon>
@@ -504,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Templates\OwnForm.resx">
       <DependentUpon>OwnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Teorema del Resto.resx">
+      <DependentUpon>Teorema del Resto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
