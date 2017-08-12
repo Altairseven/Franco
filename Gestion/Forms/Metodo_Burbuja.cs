@@ -49,6 +49,16 @@ namespace Gestion {
             //Para que cada vez q se aprete, primero limpie el contenido actual de la segunda listbox.
             lstOrdenados.Items.Clear();
 
+            int[] D = new int[3];
+            string[] culo = new string[100];
+
+
+
+
+            List<int> teta = new List<int>();
+            teta = lstDesordenados.Items.OfType<int>().ToList();
+            
+
             int[] d = new int[20]; //Declaracion de array de 20 numeros int.
             int aux = 0; //Declaracion de una variable auxiliar.
 
