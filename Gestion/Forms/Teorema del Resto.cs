@@ -39,23 +39,23 @@ namespace Gestion.Forms {
 
         }
 
-        //Este evento se ejecuta cada vez q se apreta una tecla dentro del maskedtextbox
-        private void mTextBox_Edit1_KeyDown(object sender, KeyEventArgs e) {
+        //Este evento se ejecuta cada vez q se apreta una tecla dentro de TB_1 y TB_2
+        private void TB1_KeyDown(object sender, KeyEventArgs e) {
             //si la tecla es diferente a enter, tira return, abortando la operacion
             if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Return) 
                 return;
-            //si no es diferente, sigue el camino, llamando al metodo ParseEc()
-            ParseEc(mTextBox_Edit1.Text.Trim().ToUpper());
-
+            //si no es diferente, sigue el camino
+            ParsePolinomio(TB_1.Text.Trim().ToUpper());
 
             //Finalmente, teniendo la lista completa, usamos consulta de linq, para ordenar los terminos
-            // por exponente de mayor a menor.
+            // por exponente de mayor a menor.el polinomio
             Terminos = (from a in Terminos
-                       orderby a.Exponente descending
-                       select a).ToList();
+                        orderby a.Exponente descending
+                        select a).ToList();
 
 
-            int PonganElPuntoDeInterrupcionAcaParaVer = 1;
+
+
 
         }
 
@@ -63,29 +63,29 @@ namespace Gestion.Forms {
         //+:    5x^3 , 1x^5 , 2x^1
         //-:    -4x^6, -20
 
-        private void ParseEc(string ecuacion) {
-            //separa la ecuacion en terminos que empiecen con + o con -
-            List<string> positivos = ecuacion.Split('+').ToList();
-            List<string> negativos = ecuacion.Split('-').ToList();
+        private void ParsePolinomio(string polinomio) {
+            //separa el polinomio en terminos que empiecen con + o con -
+            List<string> positivos = polinomio.Split('+').ToList();
+            List<string> negativos = polinomio.Split('-').ToList();
             
             /*Correcciones Necesarias sobre la lista Negativos:
-                1 - Si la ecuacion empeza con un termino negativo, y por ende tiene el '-' adelante
+                1 - Si el polinomio empeza con un termino negativo, y por ende tiene el '-' adelante
                     el split de arriba, va a generar un termino vacio en el primer slot de la lista.
-                2 - En Cambio.. si la ecuacion empieza en positivo, y sin signo '+' explicito,
+                2 - En Cambio.. si el polinomio empieza en positivo, y sin signo '+' explicito,
                     el mismo split, va a dejar en el primer slot, un termino positivo q no deberia estar.
                     En ambos casos, hay q borrar el primer elemento de la lista, asi que .. borramos sin 
                     checkear lo que hay.
              */
             negativos.Remove(negativos[0]);
             /*Correcciones Necesarias sobre la lista Positivos:
-                1 - Si la ecuacion empieza con termino positivo, pero con el '+' explicito
+                1 - Si el polinomio empieza con termino positivo, pero con el '+' explicito
                     el split va a generar un termino vacio, igual q en el caso 1 pero con los negativos.
                     esta correccion si, solo lo hacemos en el caso en q se encuentre el '+'. 
                 2 - SI empieza con termino negativo, el split va a dejar el primer termino con un negativo, 
                     hay q sacarlo
              */
 
-            if (ecuacion.StartsWith("+") || ecuacion.StartsWith("-"))
+            if (polinomio.StartsWith("+") || polinomio.StartsWith("-"))
                 positivos.Remove(positivos[0]);
 
             //desechamos los pedasos que no deberian quedar en cada elemento de la lista.
@@ -116,7 +116,7 @@ namespace Gestion.Forms {
                 int? exponente = null; // int? = int que puede ser seteado en nulo
                 
                 //Nos fijamos si el termino contiene una incognita
-                if (termino.Contains("X^")) {
+                if (termino.Contains("X")) {
                     // si el termino empieza con X, entonces es xq esta multiplicado por 1 (o por -1)
                     // entonces agregamos como coeficiente = 1
                     if (termino.StartsWith("X"))
@@ -136,8 +136,6 @@ namespace Gestion.Forms {
                 else {
                     //asignamos solo el coeficiente
                     coeficiente = Convert.ToInt32(termino);
-
-
                 }
                 //Si la lista no es de terminos positivos, multiplicamos el coeficiente
                 //por -1, para q sea negativo.
@@ -164,7 +162,50 @@ namespace Gestion.Forms {
             return Terms;
         }
 
+        private double ParseBinomio(string binomio) {
+            double Raiz = 0;
+            if (binomio.Contains("X-")) //si tiene -, la raiz es positiva, xq.. es asi la regla
+                Raiz = Convert.ToInt32(binomio.Split('-').Last());
+            else if (binomio.Contains("X+"))// y si tiene +, es xq es negativa
+                Raiz = Convert.ToInt32(binomio.Split('+').Last()) * -1;
+            else
+                MessageBox.Show("Fire, Fire, RATATATATATA");
 
+            return Calc_Result(Raiz);
+        }
+        private double Calc_Result(double Raiz) {
+            double Resultado = 0;
+            foreach (Termino T in Terminos) {
+                Resultado += T.Coeficiente * Math.Pow(Raiz, T.Exponente);
+            }
+            return Resultado;
+        }
+
+
+
+
+        private void Ejemplos_Load(object sender, EventArgs e) {
+            switch (sender.ToString()) {
+                case "Ejemplo 1":
+                    TB_1.Text = "4x^2-3x+2";
+                    TB_2.Text = "x+2";
+                    break;
+                case "Ejemplo 2":
+                    TB_1.Text = "-5x^3-4x^6-1x^5+2x^2+80";
+                    TB_2.Text = "x+4";
+                    break;
+                case "Ejemplo 3":
+                    TB_1.Text = "3x^3+9x^6+1x^5+2x^1-20";
+                    TB_2.Text = "x-3";
+                    break;
+            }
+        }
+
+        private void TB_2_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.Return)
+                return;
+            TB_3.Text = ParseBinomio(TB_2.Text.Trim().ToUpper()).ToString();
+        }
     }
 }
 
