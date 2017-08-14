@@ -52,11 +52,6 @@ namespace Gestion.Forms {
             Terminos = (from a in Terminos
                         orderby a.Exponente descending
                         select a).ToList();
-
-
-
-
-
         }
 
         //        5x^3-4x^6+1x^5+2x^1-20
