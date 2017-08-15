@@ -178,112 +178,106 @@
     <Compile Include="Forms\Tests_Varios.Designer.cs">
       <DependentUpon>Tests_Varios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ABM_Ficha_Busqueda_Cliente.cs">
+    <Compile Include="Forms\Hechos En Clase\ABM_Ficha_Busqueda_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ABM_Ficha_Busqueda_Cliente.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\ABM_Ficha_Busqueda_Cliente.Designer.cs">
       <DependentUpon>ABM_Ficha_Busqueda_Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ABM_Grilla.cs">
+    <Compile Include="Forms\Hechos En Clase\ABM_Grilla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ABM_Grilla.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\ABM_Grilla.Designer.cs">
       <DependentUpon>ABM_Grilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Algoritmos_Ordenamiento_Arrays.cs">
+    <Compile Include="Forms\Propios\Algoritmos_Ordenamiento_Arrays.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Algoritmos_Ordenamiento_Arrays.Designer.cs">
+    <Compile Include="Forms\Propios\Algoritmos_Ordenamiento_Arrays.Designer.cs">
       <DependentUpon>Algoritmos_Ordenamiento_Arrays.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Busqueda_Dicotomica.cs">
+    <Compile Include="Forms\Hechos En Clase\Busqueda_Dicotomica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Busqueda_Dicotomica.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\Busqueda_Dicotomica.Designer.cs">
       <DependentUpon>Busqueda_Dicotomica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Busqueda_Dicotomica_PorMi.cs">
+    <Compile Include="Forms\Hechos En Clase\calculo_potencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Busqueda_Dicotomica_PorMi.Designer.cs">
-      <DependentUpon>Busqueda_Dicotomica_PorMi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\calculo_potencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\calculo_potencia.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\calculo_potencia.Designer.cs">
       <DependentUpon>calculo_potencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DD_arbolMenu_Propio.cs">
+    <Compile Include="Forms\Hechos En Clase\DD_arbolMenu_Propio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DD_arbolMenu_Propio.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\DD_arbolMenu_Propio.Designer.cs">
       <DependentUpon>DD_arbolMenu_Propio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dock_Form_As_Panel.cs">
+    <Compile Include="Forms\Propios\Dock_Form_As_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dock_Form_As_Panel.Designer.cs">
+    <Compile Include="Forms\Propios\Dock_Form_As_Panel.Designer.cs">
       <DependentUpon>Dock_Form_As_Panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ejemplo_for.cs">
+    <Compile Include="Forms\Hechos En Clase\ejemplo_for.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ejemplo_for.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\ejemplo_for.Designer.cs">
       <DependentUpon>ejemplo_for.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ejemplo_separar_par_impar.cs">
+    <Compile Include="Forms\Hechos En Clase\ejemplo_separar_par_impar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ejemplo_separar_par_impar.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\ejemplo_separar_par_impar.Designer.cs">
       <DependentUpon>ejemplo_separar_par_impar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Estadistica_Main.cs">
+    <Compile Include="Forms\Propios\Estadistica_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Estadistica_Main.Designer.cs">
+    <Compile Include="Forms\Propios\Estadistica_Main.Designer.cs">
       <DependentUpon>Estadistica_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Euclides.cs">
+    <Compile Include="Forms\Hechos En Clase\Euclides.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Euclides.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\Euclides.Designer.cs">
       <DependentUpon>Euclides.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ExperimentoUI.cs">
+    <Compile Include="Forms\Propios\ExperimentoUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ExperimentoUI.Designer.cs">
+    <Compile Include="Forms\Propios\ExperimentoUI.Designer.cs">
       <DependentUpon>ExperimentoUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Fibonachi.cs">
+    <Compile Include="Forms\Hechos En Clase\Fibonachi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Fibonachi.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\Fibonachi.Designer.cs">
       <DependentUpon>Fibonachi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\File_R_W.cs">
+    <Compile Include="Forms\Propios\File_R_W.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\File_R_W.Designer.cs">
+    <Compile Include="Forms\Propios\File_R_W.Designer.cs">
       <DependentUpon>File_R_W.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ABM_Ficha.cs">
+    <Compile Include="Forms\Hechos En Clase\ABM_Ficha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ABM_Ficha.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\ABM_Ficha.Designer.cs">
       <DependentUpon>ABM_Ficha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\linq_test.cs">
+    <Compile Include="Forms\Propios\linq_test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\linq_test.Designer.cs">
+    <Compile Include="Forms\Propios\linq_test.Designer.cs">
       <DependentUpon>linq_test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login.cs">
+    <Compile Include="Forms\Propios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login.Designer.cs">
+    <Compile Include="Forms\Propios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
@@ -292,40 +286,28 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MaskedTB_Ejemplo.cs">
+    <Compile Include="Forms\Hechos En Clase\MaskedTB_Ejemplo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MaskedTB_Ejemplo.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\MaskedTB_Ejemplo.Designer.cs">
       <DependentUpon>MaskedTB_Ejemplo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Metodo_Burbuja.cs">
+    <Compile Include="Forms\Hechos En Clase\Metodo_Burbuja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Metodo_Burbuja.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\Metodo_Burbuja.Designer.cs">
       <DependentUpon>Metodo_Burbuja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Metodo_Burbuja2.cs">
+    <Compile Include="Forms\Propios\MS SQL Server Control.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Metodo_Burbuja2.Designer.cs">
-      <DependentUpon>Metodo_Burbuja2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Metodo_Burbuja_Modular.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Metodo_Burbuja_Modular.Designer.cs">
-      <DependentUpon>Metodo_Burbuja_Modular.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MS SQL Server Control.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MS SQL Server Control.Designer.cs">
+    <Compile Include="Forms\Propios\MS SQL Server Control.Designer.cs">
       <DependentUpon>MS SQL Server Control.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Password_Salt_And_Hash.cs">
+    <Compile Include="Forms\Propios\Password_Salt_And_Hash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Password_Salt_And_Hash.Designer.cs">
+    <Compile Include="Forms\Propios\Password_Salt_And_Hash.Designer.cs">
       <DependentUpon>Password_Salt_And_Hash.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Principal.cs">
@@ -334,22 +316,22 @@
     <Compile Include="Forms\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Prueba_ado.cs">
+    <Compile Include="Forms\Hechos En Clase\Prueba_ado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Prueba_ado.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\Prueba_ado.Designer.cs">
       <DependentUpon>Prueba_ado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Raiz.cs">
+    <Compile Include="Forms\Hechos En Clase\Raiz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Raiz.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\Raiz.Designer.cs">
       <DependentUpon>Raiz.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Suck It Java.cs">
+    <Compile Include="Forms\Propios\Suck It Java.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Suck It Java.Designer.cs">
+    <Compile Include="Forms\Propios\Suck It Java.Designer.cs">
       <DependentUpon>Suck It Java.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Templates\EnClasesForm.cs">
@@ -364,10 +346,10 @@
     <Compile Include="Forms\Templates\OwnForm.Designer.cs">
       <DependentUpon>OwnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Teorema del Resto.cs">
+    <Compile Include="Forms\Hechos En Clase\Teorema del Resto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Teorema del Resto.Designer.cs">
+    <Compile Include="Forms\Hechos En Clase\Teorema del Resto.Designer.cs">
       <DependentUpon>Teorema del Resto.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionDataSet1.Designer.cs">
@@ -404,91 +386,82 @@
     <EmbeddedResource Include="Components\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ABM_Ficha_Busqueda_Cliente.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\ABM_Ficha_Busqueda_Cliente.resx">
       <DependentUpon>ABM_Ficha_Busqueda_Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ABM_Grilla.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\ABM_Grilla.resx">
       <DependentUpon>ABM_Grilla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Algoritmos_Ordenamiento_Arrays.resx">
+    <EmbeddedResource Include="Forms\Propios\Algoritmos_Ordenamiento_Arrays.resx">
       <DependentUpon>Algoritmos_Ordenamiento_Arrays.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Busqueda_Dicotomica.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\Busqueda_Dicotomica.resx">
       <DependentUpon>Busqueda_Dicotomica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Busqueda_Dicotomica_PorMi.resx">
-      <DependentUpon>Busqueda_Dicotomica_PorMi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\calculo_potencia.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\calculo_potencia.resx">
       <DependentUpon>calculo_potencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DD_arbolMenu_Propio.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\DD_arbolMenu_Propio.resx">
       <DependentUpon>DD_arbolMenu_Propio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dock_Form_As_Panel.resx">
+    <EmbeddedResource Include="Forms\Propios\Dock_Form_As_Panel.resx">
       <DependentUpon>Dock_Form_As_Panel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ejemplo_for.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\ejemplo_for.resx">
       <DependentUpon>ejemplo_for.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ejemplo_separar_par_impar.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\ejemplo_separar_par_impar.resx">
       <DependentUpon>ejemplo_separar_par_impar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Estadistica_Main.resx">
+    <EmbeddedResource Include="Forms\Propios\Estadistica_Main.resx">
       <DependentUpon>Estadistica_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Euclides.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\Euclides.resx">
       <DependentUpon>Euclides.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ExperimentoUI.resx">
+    <EmbeddedResource Include="Forms\Propios\ExperimentoUI.resx">
       <DependentUpon>ExperimentoUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Fibonachi.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\Fibonachi.resx">
       <DependentUpon>Fibonachi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\File_R_W.resx">
+    <EmbeddedResource Include="Forms\Propios\File_R_W.resx">
       <DependentUpon>File_R_W.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ABM_Ficha.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\ABM_Ficha.resx">
       <DependentUpon>ABM_Ficha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\linq_test.resx">
+    <EmbeddedResource Include="Forms\Propios\linq_test.resx">
       <DependentUpon>linq_test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login.resx">
+    <EmbeddedResource Include="Forms\Propios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MaskedTB_Ejemplo.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\MaskedTB_Ejemplo.resx">
       <DependentUpon>MaskedTB_Ejemplo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Metodo_Burbuja.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\Metodo_Burbuja.resx">
       <DependentUpon>Metodo_Burbuja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Metodo_Burbuja2.resx">
-      <DependentUpon>Metodo_Burbuja2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Metodo_Burbuja_Modular.resx">
-      <DependentUpon>Metodo_Burbuja_Modular.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MS SQL Server Control.resx">
+    <EmbeddedResource Include="Forms\Propios\MS SQL Server Control.resx">
       <DependentUpon>MS SQL Server Control.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Password_Salt_And_Hash.resx">
+    <EmbeddedResource Include="Forms\Propios\Password_Salt_And_Hash.resx">
       <DependentUpon>Password_Salt_And_Hash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Prueba_ado.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\Prueba_ado.resx">
       <DependentUpon>Prueba_ado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Raiz.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\Raiz.resx">
       <DependentUpon>Raiz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Suck It Java.resx">
+    <EmbeddedResource Include="Forms\Propios\Suck It Java.resx">
       <DependentUpon>Suck It Java.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Templates\EnClasesForm.resx">
@@ -497,7 +470,7 @@
     <EmbeddedResource Include="Forms\Templates\OwnForm.resx">
       <DependentUpon>OwnForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Teorema del Resto.resx">
+    <EmbeddedResource Include="Forms\Hechos En Clase\Teorema del Resto.resx">
       <DependentUpon>Teorema del Resto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tests_Varios.resx">
@@ -623,5 +596,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

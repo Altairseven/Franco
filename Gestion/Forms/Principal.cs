@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestion.Forms.Hechos_En_Clase;
+using Gestion.Forms.Propios;
 
 namespace Gestion.Forms {
     public partial class Principal : EnClasesForm {

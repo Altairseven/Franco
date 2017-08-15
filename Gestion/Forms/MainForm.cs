@@ -25,7 +25,8 @@ namespace Gestion {
             toolStripComboBox1.Items.Add("LocalSQLServer");
             toolStripComboBox1.SelectedIndex = 1;
             constringinit();
-            Setup_Forms();
+            ////Setup_Forms();
+            Setup_FormsByNamespace();
         }
         
         //Hace una lista de todos los forms en el proyecto, y dependiendo de su herencia
@@ -57,7 +58,38 @@ namespace Gestion {
             Lista = null;
             treeView1.ExpandAll();
         }
-        
+
+        private void Setup_FormsByNamespace() {
+            FormsData = new List<FormData>[3];
+
+
+            Get_Forms_ByNameSpace Forms = new Get_Forms_ByNameSpace();
+
+            Forms.AddFormList("Gestion.Forms.Hechos_En_Clase");
+            Forms.AddFormList("Gestion.Forms.Propios");
+            Forms.AddUncategorizedFormList();
+
+            for (int i = 0; i < Forms.FormLists.Count; i++) {
+                Lista = new List<FormData>();
+                foreach (Type form in Forms.FormLists[i]) {
+                    if (!Forms.Exceptions_check(form)) {
+                        string a = form.Name.Replace("_", " ");
+                        FormData FD = new FormData(i, a, form.FullName);
+                        Lista.Add(FD);
+                    }
+                }
+                FormsData[i] = Lista;
+                foreach (FormData FD in Lista) {
+                    treeView1.Nodes[i].Nodes.Add(FD.FormName);
+                }
+            }
+            Lista = null;
+            treeView1.ExpandAll();
+        }
+
+
+
+
         private void toolStripComboBox1_IndexChanged(object sender, EventArgs e) {
             constringinit();
         }
@@ -89,7 +121,7 @@ namespace Gestion {
                 
         }
 
-        private void RunForm() {
+        private void RunForm(object sender, EventArgs e) {
             if (treeView1.SelectedNode.Parent != null)
                 foreach (FormData fd in FormsData[treeView1.SelectedNode.Parent.Index])
                     if (fd.FormName == treeView1.SelectedNode.Text) {
@@ -98,12 +130,6 @@ namespace Gestion {
                     }
         }
 
-        private void treeView1_DoubleClick(object sender, EventArgs e) {
-            RunForm();
-        }
 
-        private void button1_Click(object sender, EventArgs e) {
-            RunForm();
-        }
     }
 }
