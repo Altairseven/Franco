@@ -214,12 +214,6 @@
     <Compile Include="Forms\calculo_potencia.Designer.cs">
       <DependentUpon>calculo_potencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\culo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\culo.Designer.cs">
-      <DependentUpon>culo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\DD_arbolMenu_Propio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -427,9 +421,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\calculo_potencia.resx">
       <DependentUpon>calculo_potencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\culo.resx">
-      <DependentUpon>culo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DD_arbolMenu_Propio.resx">
       <DependentUpon>DD_arbolMenu_Propio.cs</DependentUpon>
