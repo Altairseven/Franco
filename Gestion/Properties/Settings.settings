@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=FRANCO-ROG\ALTAIRSQL;Initial Catalog=Gestion;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="ReflectionType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Type</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

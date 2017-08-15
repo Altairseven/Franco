@@ -34,7 +34,7 @@ namespace Gestion {
         private void Setup_Forms() {
             FormsData = new List<FormData>[3];
 
-            Get_Forms[] forms = new Get_Forms[3] {
+                Get_Forms[] forms = new Get_Forms[3] {
                     new Get_Forms("Gestion.Forms.EnClasesForm"),
                     new Get_Forms("Gestion.Forms.OwnForm"),
                     new Get_Forms("System.Windows.Forms.Form")

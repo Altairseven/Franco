@@ -172,11 +172,11 @@
     <Compile Include="Data\user.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AA Test.cs">
+    <Compile Include="Forms\Tests_Varios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AA Test.Designer.cs">
-      <DependentUpon>AA Test.cs</DependentUpon>
+    <Compile Include="Forms\Tests_Varios.Designer.cs">
+      <DependentUpon>Tests_Varios.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ABM_Ficha_Busqueda_Cliente.cs">
       <SubType>Form</SubType>
@@ -328,12 +328,6 @@
     <Compile Include="Forms\MS SQL Server Control.Designer.cs">
       <DependentUpon>MS SQL Server Control.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MySQL ADO Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MySQL ADO Test.Designer.cs">
-      <DependentUpon>MySQL ADO Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Password_Salt_And_Hash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,12 +345,6 @@
     </Compile>
     <Compile Include="Forms\Prueba_ado.Designer.cs">
       <DependentUpon>Prueba_ado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Prueba_ado2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Prueba_ado2.Designer.cs">
-      <DependentUpon>Prueba_ado2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Raiz.cs">
       <SubType>Form</SubType>
@@ -403,6 +391,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="Components\Estadistica\Estadistica_panel.resx">
       <DependentUpon>Estadistica_panel.cs</DependentUpon>
     </EmbeddedResource>
@@ -505,9 +494,6 @@
     <EmbeddedResource Include="Forms\Prueba_ado.resx">
       <DependentUpon>Prueba_ado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Prueba_ado2.resx">
-      <DependentUpon>Prueba_ado2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Raiz.resx">
       <DependentUpon>Raiz.cs</DependentUpon>
     </EmbeddedResource>
@@ -522,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Teorema del Resto.resx">
       <DependentUpon>Teorema del Resto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tests_Varios.resx">
+      <DependentUpon>Tests_Varios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -558,7 +547,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Resources.Designer.cs">

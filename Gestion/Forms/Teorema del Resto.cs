@@ -54,10 +54,6 @@ namespace Gestion.Forms {
                         select a).ToList();
         }
 
-        //        5x^3-4x^6+1x^5+2x^1-20
-        //+:    5x^3 , 1x^5 , 2x^1
-        //-:    -4x^6, -20
-
         private void ParsePolinomio(string polinomio) {
             //separa el polinomio en terminos que empiecen con + o con -
             List<string> positivos = polinomio.Split('+').ToList();
@@ -168,6 +164,7 @@ namespace Gestion.Forms {
 
             return Calc_Result(Raiz);
         }
+
         private double Calc_Result(double Raiz) {
             double Resultado = 0;
             foreach (Termino T in Terminos) {
@@ -175,9 +172,6 @@ namespace Gestion.Forms {
             }
             return Resultado;
         }
-
-
-
 
         private void Ejemplos_Load(object sender, EventArgs e) {
             switch (sender.ToString()) {
