@@ -117,20 +117,6 @@ namespace Gestion {
 
 
         }
-        //public List<Type> Formlist = new List<Type>();
-
-        //public Get_Forms_ByNameSpace(string target) {
-        //    System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetEntryAssembly();
-        //    Type[] Types = myAssembly.GetTypes();
-        //    Formlist.Clear();
-        //    foreach (Type myType in Types) {
-        //        if (myType.FullName.StartsWith(target + "."))
-        //            foreach (string AT in AllowedTypes())
-        //                if (myType.BaseType.FullName == AT)
-        //                    Formlist.Add(myType);
-
-        //    }
-        //}
         public virtual List<string> AllowedTypes() {
             List<string> allowed = new List<string>();
             allowed.Add("Gestion.Forms.EnClasesForm");
@@ -147,6 +133,9 @@ namespace Gestion {
             exceptions.Add("EnClasesForm");
             exceptions.Add("OwnForm");
             exceptions.Add("MainForm");
+            exceptions.Add("Settings");
+            exceptions.Add("MainDockForm");
+            exceptions.Add("Principal");
 
             //Formularios que son hijos de otros formualarios, 
             //y por ende no deberian aparecer en el main form:

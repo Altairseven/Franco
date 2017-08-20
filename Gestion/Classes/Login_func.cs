@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace Gestion.Classes {
     class Login_func {
 
-        LINQDataContext db = new LINQDataContext(MainForm.ConString);
+        LINQDataContext db = new LINQDataContext(Program.Global_ConString);
         
 
 
@@ -32,12 +32,7 @@ namespace Gestion.Classes {
                 return false;
             }
         }
-        //public void ins_timestamp(string username) {
-        //    DateTime dt = DateTime.Now;             
-        //    string format = "yyyy-mm-dd hh:mm:ss";
-        //    var querry = db.Users.Where(w => w.username == username).FirstOrDefault();
-        //    querry.lastlogin = DateTime.Now;
-        //}
+
 
     }
 }

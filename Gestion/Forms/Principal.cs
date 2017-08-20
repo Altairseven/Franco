@@ -73,5 +73,15 @@ namespace Gestion.Forms {
             form.Show(); //no modal
             //form.ShowDialog(); //Modal
         }
+
+        private void aBMClientesFichaToolStripMenuItem_Click(object sender, EventArgs e) {
+            ABM_Clientes_Ficha form = new ABM_Clientes_Ficha();
+            form.Show();
+        }
+
+        private void Ajustes_Click(object sender, EventArgs e) {
+            Forms.Settings settings = new Forms.Settings();
+            settings.ShowDialog();
+        }
     }
 }

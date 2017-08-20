@@ -197,7 +197,7 @@ namespace Gestion.Forms.Hechos_En_Clase {
         }
     }
 
-    public class testlalalal { }
+    
 }
 
 

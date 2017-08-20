@@ -26,6 +26,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ejerciciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMClientesFichaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Ajustes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -33,27 +35,48 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ejerciciosToolStripMenuItem});
+            this.ejerciciosToolStripMenuItem,
+            this.Ajustes});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1156, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1156, 48);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ejerciciosToolStripMenuItem
             // 
             this.ejerciciosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pruebaToolStripMenuItem});
+            this.pruebaToolStripMenuItem,
+            this.aBMClientesFichaToolStripMenuItem});
             this.ejerciciosToolStripMenuItem.Name = "ejerciciosToolStripMenuItem";
-            this.ejerciciosToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.ejerciciosToolStripMenuItem.Size = new System.Drawing.Size(83, 44);
             this.ejerciciosToolStripMenuItem.Text = "Ejercicios";
             // 
             // pruebaToolStripMenuItem
             // 
             this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.pruebaToolStripMenuItem.Text = "Prueba";
             this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
+            // 
+            // aBMClientesFichaToolStripMenuItem
+            // 
+            this.aBMClientesFichaToolStripMenuItem.Name = "aBMClientesFichaToolStripMenuItem";
+            this.aBMClientesFichaToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.aBMClientesFichaToolStripMenuItem.Text = "ABM_Clientes_Ficha";
+            this.aBMClientesFichaToolStripMenuItem.Click += new System.EventHandler(this.aBMClientesFichaToolStripMenuItem_Click);
+            // 
+            // Ajustes
+            // 
+            this.Ajustes.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.Ajustes.Image = global::Gestion.Properties.Resources.wrench;
+            this.Ajustes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Ajustes.Name = "Ajustes";
+            this.Ajustes.Size = new System.Drawing.Size(68, 44);
+            this.Ajustes.Text = "Ajustes";
+            this.Ajustes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Ajustes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Ajustes.Click += new System.EventHandler(this.Ajustes_Click);
             // 
             // Principal
             // 
@@ -77,6 +100,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ejerciciosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBMClientesFichaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Ajustes;
     }
 }
 

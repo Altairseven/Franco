@@ -21,10 +21,8 @@ namespace Gestion {
 
 
         private void MainForm_Load(object sender, EventArgs e) {
-            toolStripComboBox1.Items.Add("LocalDB");
-            toolStripComboBox1.Items.Add("LocalSQLServer");
-            toolStripComboBox1.SelectedIndex = 1;
-            constringinit();
+
+           
             ////Setup_Forms();
             Setup_FormsByNamespace();
         }
@@ -78,7 +76,10 @@ namespace Gestion {
                         Lista.Add(FD);
                     }
                 }
-                FormsData[i] = Lista;
+                FormsData[i] = (from a in Lista
+                                orderby a.FormName ascending
+                                select a).ToList();
+
                 foreach (FormData FD in Lista) {
                     treeView1.Nodes[i].Nodes.Add(FD.FormName);
                 }
@@ -87,21 +88,6 @@ namespace Gestion {
             treeView1.ExpandAll();
         }
 
-
-
-
-        private void toolStripComboBox1_IndexChanged(object sender, EventArgs e) {
-            constringinit();
-        }
-
-        private void constringinit() {
-            if (toolStripComboBox1.Text == "LocalSQLServer") {
-                ConString = con.ConSrt(true);
-            }
-            else if (toolStripComboBox1.Text == "LocalDB") {
-                ConString = con.ConSrt(false);
-            }
-        }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e) {
             if (treeView1.SelectedNode.Parent == null) 
@@ -130,6 +116,17 @@ namespace Gestion {
                     }
         }
 
+        private void Ajustes_MouseEnter(object sender, EventArgs e) {
+            Ajustes.Text = "Ajustes";
+        }
 
+        private void Ajustes_MouseLeave(object sender, EventArgs e) {
+            Ajustes.Text = "";
+        }
+
+        private void Ajustes_Click(object sender, EventArgs e) {
+            Forms.Settings settings = new Forms.Settings();
+            settings.ShowDialog();
+        }
     }
 }

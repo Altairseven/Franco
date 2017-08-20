@@ -15,7 +15,7 @@ namespace Gestion.Forms.Hechos_En_Clase {
             InitializeComponent();
         }
 
-        public SqlConnection co = new SqlConnection(MainForm.ConString);
+        public SqlConnection co = new SqlConnection(Program.Global_ConString);
         public DataSet ds= new DataSet();
 
         private void Prueba_ado_Load(object sender, EventArgs e) {
@@ -25,12 +25,12 @@ namespace Gestion.Forms.Hechos_En_Clase {
             da.Fill(ds, "clientes");
 
             var b = ds.Tables[0].DefaultView;
-            string aux;
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++) // loop en el registro.
-            {
-                aux = b[i]["limitecredito"].ToString();
+            //string aux;
+            //for (int i = 0; i < ds.Tables[0].Rows.Count; i++) // loop en el registro.
+            //{
+            //    aux = b[i]["limitecredito"].ToString();
                 
-            }
+            //}
             dataGridView1.DataSource = b;
             //bindingSource1.DataSource = ds.Tables[0];
             
@@ -38,6 +38,10 @@ namespace Gestion.Forms.Hechos_En_Clase {
 
 
 
+        }
+
+        private void Dispose(object sender, FormClosedEventArgs e) {
+            this.Dispose();
         }
     }
 }

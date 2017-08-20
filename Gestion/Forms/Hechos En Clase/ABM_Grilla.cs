@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Gestion.Data;
 
 namespace Gestion.Forms.Hechos_En_Clase {
     public partial class ABM_Grilla : Gestion.Forms.EnClasesForm {
@@ -15,7 +16,7 @@ namespace Gestion.Forms.Hechos_En_Clase {
         SqlConnection co;
 
         private void ABM_Grilla_Load(object sender, EventArgs e) {
-            co = new SqlConnection(@"Data Source=FRANCO-NB\ALTAIRSQL;Initial Catalog=Gestion;Integrated Security=True");
+            co = new SqlConnection(Program.Global_ConString);
             da = new SqlDataAdapter("SELECT * FROM Clientes", co);
             SqlCommandBuilder cmd = new SqlCommandBuilder(da);
 
@@ -26,6 +27,11 @@ namespace Gestion.Forms.Hechos_En_Clase {
             bs.DataMember = "Clientes";
             dataGridView1.DataSource = bs;
             bindingNavigator1.BindingSource = bs;
+
+            
+            
+
+
         }
 
         private void button1_Click(object sender, EventArgs e) {

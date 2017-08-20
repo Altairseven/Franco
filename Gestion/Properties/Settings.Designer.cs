@@ -36,13 +36,25 @@ namespace Gestion.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Type")]
-        public string ReflectionType {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int StartForm {
             get {
-                return ((string)(this["ReflectionType"]));
+                return ((int)(this["StartForm"]));
             }
             set {
-                this["ReflectionType"] = value;
+                this["StartForm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ConString {
+            get {
+                return ((int)(this["ConString"]));
+            }
+            set {
+                this["ConString"] = value;
             }
         }
     }

@@ -21,12 +21,6 @@ namespace Gestion.Forms.Hechos_En_Clase {
 
         private void Form1_Load(object sender, EventArgs e) {
             editmode = false;
-
-            //IQueryable<cliente> custQuery =
-            //                    from cust in cliente
-            //                    where cust.City == "London"
-            //                    select cust;
-
         }
 
         private void EditMode(bool mode) {

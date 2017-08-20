@@ -172,6 +172,24 @@
     <Compile Include="Data\user.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Hechos En Clase\ABM_Clientes_Ficha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hechos En Clase\ABM_Clientes_Ficha.Designer.cs">
+      <DependentUpon>ABM_Clientes_Ficha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainDockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainDockForm.Designer.cs">
+      <DependentUpon>MainDockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tests_Varios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,14 +401,23 @@
     <EmbeddedResource Include="Components\FormButton.resx">
       <DependentUpon>FormButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\MTextBox_Edit.resx">
+      <DependentUpon>MTextBox_Edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hechos En Clase\ABM_Clientes_Ficha.resx">
+      <DependentUpon>ABM_Clientes_Ficha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Hechos En Clase\ABM_Ficha_Busqueda_Cliente.resx">
       <DependentUpon>ABM_Ficha_Busqueda_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Hechos En Clase\ABM_Grilla.resx">
       <DependentUpon>ABM_Grilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainDockForm.resx">
+      <DependentUpon>MainDockForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Propios\Algoritmos_Ordenamiento_Arrays.resx">
       <DependentUpon>Algoritmos_Ordenamiento_Arrays.cs</DependentUpon>
@@ -463,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Propios\Suck It Java.resx">
       <DependentUpon>Suck It Java.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Templates\EnClasesForm.resx">
       <DependentUpon>EnClasesForm.cs</DependentUpon>
@@ -562,6 +592,8 @@
     <Content Include="Resources\pencil.png" />
     <Content Include="Resources\Profile blurred.png" />
     <Content Include="Resources\profile.png" />
+    <None Include="Resources\wrench.png" />
+    <Content Include="Teoria\TextFile1.txt" />
     <None Include="Resources\raiz.png" />
     <None Include="Resources\sign-delete.png" />
     <None Include="Resources\trashcan.png" />
