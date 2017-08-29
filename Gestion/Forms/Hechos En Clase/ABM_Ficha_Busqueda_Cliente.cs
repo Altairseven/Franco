@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestion.Forms.Hechos_En_Clase {
-    public partial class ABM_Ficha_Busqueda_Cliente : EnClasesForm {
+    public partial class ABM_Ficha_Busqueda_Cliente : ChildForm {
         public ABM_Ficha_Busqueda_Cliente() {
             InitializeComponent();
         }

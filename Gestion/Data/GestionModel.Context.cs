@@ -13,10 +13,10 @@ namespace Gestion.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class GestionEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public GestionEntities()
+            : base("name=GestionEntities")
         {
         }
     
@@ -25,13 +25,15 @@ namespace Gestion.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<cliente> clientes { get; set; }
-        public virtual DbSet<empleado> empleados { get; set; }
-        public virtual DbSet<modulo> modulos { get; set; }
-        public virtual DbSet<oficina> oficinas { get; set; }
-        public virtual DbSet<pedido> pedidos { get; set; }
-        public virtual DbSet<producto> productos { get; set; }
+        public virtual DbSet<Clientes> Clientes { get; set; }
+        public virtual DbSet<empleados> empleados { get; set; }
+        public virtual DbSet<Localidades> Localidades { get; set; }
+        public virtual DbSet<modulos> modulos { get; set; }
+        public virtual DbSet<oficinas> oficinas { get; set; }
+        public virtual DbSet<pedidos> pedidos { get; set; }
+        public virtual DbSet<productos> productos { get; set; }
+        public virtual DbSet<Tipos_Documento> Tipos_Documento { get; set; }
         public virtual DbSet<tree_menu> tree_menu { get; set; }
-        public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<users> users { get; set; }
     }
 }

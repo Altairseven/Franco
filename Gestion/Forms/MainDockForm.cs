@@ -15,46 +15,10 @@ namespace Gestion {
 
         List<FormData>[] FormsData;
         List<FormData> Lista;
-        connectionstring con = new connectionstring();
-
-        public static string ConString;
-
 
         private void MainForm_Load(object sender, EventArgs e) {
-
-           
-            ////Setup_Forms();
             Setup_FormsByNamespace();
-        }
-        
-        //Hace una lista de todos los forms en el proyecto, y dependiendo de su herencia
-        // los acomoda en Un TreeView
-
-        private void Setup_Forms() {
-            FormsData = new List<FormData>[3];
-
-                Get_Forms[] forms = new Get_Forms[3] {
-                    new Get_Forms("Gestion.Forms.EnClasesForm"),
-                    new Get_Forms("Gestion.Forms.OwnForm"),
-                    new Get_Forms("System.Windows.Forms.Form")
-            };
-
-            for (int i = 0; i < forms.Length; i++) {
-                Lista = new List<FormData>();
-                foreach (Type form in forms[i].Formlist) {
-                    if (forms[i].Exceptions_check(form) == false) {
-                        string a = form.Name.Replace("_", " ");
-                        FormData FD = new FormData(i, a, form.FullName);
-                        Lista.Add(FD);
-                    }
-                }
-                FormsData[i] = Lista;
-                foreach (FormData FD in Lista) {
-                    treeView1.Nodes[i].Nodes.Add(FD.FormName);
-                }
-            }
-            Lista = null;
-            treeView1.ExpandAll();
+            tabControl1.Visible = false;
         }
 
         private void Setup_FormsByNamespace() {
@@ -88,12 +52,9 @@ namespace Gestion {
             treeView1.ExpandAll();
         }
 
-
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e) {
-            if (treeView1.SelectedNode.Parent == null) 
-                button1.Enabled = false;
-            else {
-                button1.Enabled = true;
+            if (treeView1.SelectedNode.Parent != null){
+                
                 foreach (FormData fd in FormsData[treeView1.SelectedNode.Parent.Index])
                     if (fd.FormName == treeView1.SelectedNode.Text) {
                         Type obj = Type.GetType(fd.FormTypeName);
@@ -111,8 +72,25 @@ namespace Gestion {
             if (treeView1.SelectedNode.Parent != null)
                 foreach (FormData fd in FormsData[treeView1.SelectedNode.Parent.Index])
                     if (fd.FormName == treeView1.SelectedNode.Text) {
+                        
                         Form myObject = (Form)Activator.CreateInstance(Type.GetType(fd.FormTypeName));
-                        myObject.Show();
+                        if (myObject.IsMdiContainer) {
+                            myObject.Show();
+                        }
+                        else {
+                            if (tabControl1.TabPages.Count == 0)
+                                tabControl1.Visible = true;
+
+                            myObject.TopLevel = false;
+                            myObject.Dock = DockStyle.Fill;
+                            myObject.FormBorderStyle = FormBorderStyle.None;
+                            TabPage tab = new TabPage();
+                            tab.Text = myObject.Name;
+                            tab.Controls.Add(myObject);
+                            myObject.Show();
+                            tabControl1.TabPages.Add(tab);
+                            tabControl1.SelectedTab = tab;
+                        }
                     }
         }
 
@@ -127,6 +105,19 @@ namespace Gestion {
         private void Ajustes_Click(object sender, EventArgs e) {
             Forms.Settings settings = new Forms.Settings();
             settings.ShowDialog();
+        }
+
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e) {
+            var tabControl = sender as TabControl;
+            var tabs = tabControl.TabPages;
+
+            if (e.Button == MouseButtons.Middle) {
+                tabs.Remove(tabs.Cast<TabPage>()
+                        .Where((t, i) => tabControl.GetTabRect(i).Contains(e.Location))
+                        .First());
+                if (tabs.Count == 0)
+                    tabControl1.Visible = false;
+            }
         }
     }
 }

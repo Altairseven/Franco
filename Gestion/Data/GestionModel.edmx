@@ -4,14 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GestionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="clientes">
+    <Schema Namespace="GestionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clientes">
           <Key>
-            <PropertyRef Name="numclie" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="numclie" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="nvarchar" MaxLength="255" />
-          <Property Name="limitecredito" Type="money" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Apellido" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="ID_Tipo_Documento" Type="int" Nullable="false" />
+          <Property Name="Documento" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="CUIT" Type="int" />
+          <Property Name="Direccion" Type="nchar" MaxLength="40" />
+          <Property Name="ID_Localidad" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="nchar" MaxLength="40" />
+          <Property Name="Celular" Type="nchar" MaxLength="40" />
+          <Property Name="Email" Type="nchar" MaxLength="40" />
         </EntityType>
         <EntityType Name="empleados">
           <Key>
@@ -27,6 +35,14 @@
           <Property Name="jefe" Type="int" />
           <Property Name="cuota" Type="money" />
           <Property Name="ventas" Type="money" />
+        </EntityType>
+        <EntityType Name="Localidades">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cod_Postal" Type="int" />
+          <Property Name="Nombre" Type="nchar" MaxLength="40" />
         </EntityType>
         <EntityType Name="modulos">
           <Key>
@@ -73,6 +89,14 @@
           <Property Name="precio" Type="money" />
           <Property Name="existencias" Type="int" />
         </EntityType>
+        <EntityType Name="Tipos_Documento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="nchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tree_menu">
           <Key>
             <PropertyRef Name="Id" />
@@ -101,29 +125,50 @@
           <Property Name="LASTLOGIN" Type="date" />
         </EntityType>
         <EntityContainer Name="GestionModelStoreContainer">
-          <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="empleados" EntityType="Self.empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="modulos" EntityType="Self.modulos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="oficinas" EntityType="Self.oficinas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pedidos" EntityType="Self.pedidos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipos_Documento" EntityType="Self.Tipos_Documento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tree_menu" EntityType="Self.tree_menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GestionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="cliente">
+        <EntityContainer Name="GestionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="GestionModel.Clientes" />
+          <EntitySet Name="empleados" EntityType="GestionModel.empleados" />
+          <EntitySet Name="Localidades" EntityType="GestionModel.Localidades" />
+          <EntitySet Name="modulos" EntityType="GestionModel.modulos" />
+          <EntitySet Name="oficinas" EntityType="GestionModel.oficinas" />
+          <EntitySet Name="pedidos" EntityType="GestionModel.pedidos" />
+          <EntitySet Name="productos" EntityType="GestionModel.productos" />
+          <EntitySet Name="Tipos_Documento" EntityType="GestionModel.Tipos_Documento" />
+          <EntitySet Name="tree_menu" EntityType="GestionModel.tree_menu" />
+          <EntitySet Name="users" EntityType="GestionModel.users" />
+        </EntityContainer>
+        <EntityType Name="Clientes">
           <Key>
-            <PropertyRef Name="numclie" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="numclie" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="limitecredito" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="ID_Tipo_Documento" Type="Int32" Nullable="false" />
+          <Property Name="Documento" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="CUIT" Type="Int32" />
+          <Property Name="Direccion" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="ID_Localidad" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Celular" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
         </EntityType>
-        <EntityType Name="empleado">
+        <EntityType Name="empleados">
           <Key>
             <PropertyRef Name="numemp" />
             <PropertyRef Name="oficina" />
@@ -138,7 +183,15 @@
           <Property Name="cuota" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ventas" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
-        <EntityType Name="modulo">
+        <EntityType Name="Localidades">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cod_Postal" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="modulos">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -147,18 +200,18 @@
           <Property Name="orden" Type="Int32" />
           <Property Name="habilitado" Type="Int32" />
         </EntityType>
-        <EntityType Name="oficina">
+        <EntityType Name="oficinas">
           <Key>
-            <PropertyRef Name="oficina1" />
+            <PropertyRef Name="oficina" />
           </Key>
-          <Property Name="oficina1" Type="Int32" Nullable="false" />
+          <Property Name="oficina" Type="Int32" Nullable="false" />
           <Property Name="ciudad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="region" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="dir" Type="Int32" />
           <Property Name="objetivo" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ventas" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
-        <EntityType Name="pedido">
+        <EntityType Name="pedidos">
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="clie" />
@@ -169,19 +222,27 @@
           <Property Name="fechapedido" Type="DateTime" Precision="7" />
           <Property Name="clie" Type="Int32" Nullable="false" />
           <Property Name="fab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="producto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="cant" Type="Int32" />
           <Property Name="importe" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
-        <EntityType Name="producto">
+        <EntityType Name="productos">
           <Key>
             <PropertyRef Name="idproducto" />
           </Key>
-          <Property Name="idfab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="idproducto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idfab" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="idproducto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="existencias" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tipos_Documento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="tree_menu">
           <Key>
@@ -197,132 +258,148 @@
           <Property Name="grupo" Type="Int32" />
           <Property Name="icono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
-        <EntityType Name="user">
+        <EntityType Name="users">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="USERNAME" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
           <Property Name="USERFULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SALT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SALT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EMAIL" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
-          <Property Name="ACCOUNTTYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ACCOUNTTYPE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="LASTLOGIN" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="clientes" EntityType="Self.cliente" />
-          <EntitySet Name="empleados" EntityType="Self.empleado" />
-          <EntitySet Name="modulos" EntityType="Self.modulo" />
-          <EntitySet Name="oficinas" EntityType="Self.oficina" />
-          <EntitySet Name="pedidos" EntityType="Self.pedido" />
-          <EntitySet Name="productos" EntityType="Self.producto" />
-          <EntitySet Name="tree_menu" EntityType="Self.tree_menu" />
-          <EntitySet Name="users" EntityType="Self.user" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GestionModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="clientes">
-            <EntityTypeMapping TypeName="GestionModel.cliente">
-              <MappingFragment StoreEntitySet="clientes">
-                <ScalarProperty Name="numclie" ColumnName="numclie" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="limitecredito" ColumnName="limitecredito" />
+        <EntityContainerMapping StorageEntityContainer="GestionModelStoreContainer" CdmEntityContainer="GestionEntities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="GestionModel.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="ID_Localidad" ColumnName="ID_Localidad" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="ID_Tipo_Documento" ColumnName="ID_Tipo_Documento" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="empleados">
-            <EntityTypeMapping TypeName="GestionModel.empleado">
+            <EntityTypeMapping TypeName="GestionModel.empleados">
               <MappingFragment StoreEntitySet="empleados">
-                <ScalarProperty Name="numemp" ColumnName="numemp" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="edad" ColumnName="edad" />
-                <ScalarProperty Name="oficina" ColumnName="oficina" />
-                <ScalarProperty Name="titulo" ColumnName="titulo" />
-                <ScalarProperty Name="contrato" ColumnName="contrato" />
-                <ScalarProperty Name="jefe" ColumnName="jefe" />
-                <ScalarProperty Name="cuota" ColumnName="cuota" />
                 <ScalarProperty Name="ventas" ColumnName="ventas" />
+                <ScalarProperty Name="cuota" ColumnName="cuota" />
+                <ScalarProperty Name="jefe" ColumnName="jefe" />
+                <ScalarProperty Name="contrato" ColumnName="contrato" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="oficina" ColumnName="oficina" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="numemp" ColumnName="numemp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Localidades">
+            <EntityTypeMapping TypeName="GestionModel.Localidades">
+              <MappingFragment StoreEntitySet="Localidades">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="modulos">
-            <EntityTypeMapping TypeName="GestionModel.modulo">
+            <EntityTypeMapping TypeName="GestionModel.modulos">
               <MappingFragment StoreEntitySet="modulos">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="descrip" ColumnName="descrip" />
-                <ScalarProperty Name="orden" ColumnName="orden" />
                 <ScalarProperty Name="habilitado" ColumnName="habilitado" />
+                <ScalarProperty Name="orden" ColumnName="orden" />
+                <ScalarProperty Name="descrip" ColumnName="descrip" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="oficinas">
-            <EntityTypeMapping TypeName="GestionModel.oficina">
+            <EntityTypeMapping TypeName="GestionModel.oficinas">
               <MappingFragment StoreEntitySet="oficinas">
-                <ScalarProperty Name="oficina1" ColumnName="oficina" />
-                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
-                <ScalarProperty Name="region" ColumnName="region" />
-                <ScalarProperty Name="dir" ColumnName="dir" />
-                <ScalarProperty Name="objetivo" ColumnName="objetivo" />
                 <ScalarProperty Name="ventas" ColumnName="ventas" />
+                <ScalarProperty Name="objetivo" ColumnName="objetivo" />
+                <ScalarProperty Name="dir" ColumnName="dir" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+                <ScalarProperty Name="oficina" ColumnName="oficina" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="pedidos">
-            <EntityTypeMapping TypeName="GestionModel.pedido">
+            <EntityTypeMapping TypeName="GestionModel.pedidos">
               <MappingFragment StoreEntitySet="pedidos">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="numpedido" ColumnName="numpedido" />
-                <ScalarProperty Name="fechapedido" ColumnName="fechapedido" />
-                <ScalarProperty Name="clie" ColumnName="clie" />
-                <ScalarProperty Name="fab" ColumnName="fab" />
-                <ScalarProperty Name="producto" ColumnName="producto" />
-                <ScalarProperty Name="cant" ColumnName="cant" />
                 <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="cant" ColumnName="cant" />
+                <ScalarProperty Name="producto" ColumnName="producto" />
+                <ScalarProperty Name="fab" ColumnName="fab" />
+                <ScalarProperty Name="clie" ColumnName="clie" />
+                <ScalarProperty Name="fechapedido" ColumnName="fechapedido" />
+                <ScalarProperty Name="numpedido" ColumnName="numpedido" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="productos">
-            <EntityTypeMapping TypeName="GestionModel.producto">
+            <EntityTypeMapping TypeName="GestionModel.productos">
               <MappingFragment StoreEntitySet="productos">
-                <ScalarProperty Name="idfab" ColumnName="idfab" />
-                <ScalarProperty Name="idproducto" ColumnName="idproducto" />
-                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="precio" ColumnName="precio" />
                 <ScalarProperty Name="existencias" ColumnName="existencias" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="idproducto" ColumnName="idproducto" />
+                <ScalarProperty Name="idfab" ColumnName="idfab" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipos_Documento">
+            <EntityTypeMapping TypeName="GestionModel.Tipos_Documento">
+              <MappingFragment StoreEntitySet="Tipos_Documento">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tree_menu">
             <EntityTypeMapping TypeName="GestionModel.tree_menu">
               <MappingFragment StoreEntitySet="tree_menu">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="id_modulo" ColumnName="id_modulo" />
-                <ScalarProperty Name="id_item" ColumnName="id_item" />
-                <ScalarProperty Name="id_item_padre" ColumnName="id_item_padre" />
-                <ScalarProperty Name="ejecuta" ColumnName="ejecuta" />
-                <ScalarProperty Name="orden" ColumnName="orden" />
-                <ScalarProperty Name="titulo" ColumnName="titulo" />
-                <ScalarProperty Name="grupo" ColumnName="grupo" />
                 <ScalarProperty Name="icono" ColumnName="icono" />
+                <ScalarProperty Name="grupo" ColumnName="grupo" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="orden" ColumnName="orden" />
+                <ScalarProperty Name="ejecuta" ColumnName="ejecuta" />
+                <ScalarProperty Name="id_item_padre" ColumnName="id_item_padre" />
+                <ScalarProperty Name="id_item" ColumnName="id_item" />
+                <ScalarProperty Name="id_modulo" ColumnName="id_modulo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="GestionModel.user">
+            <EntityTypeMapping TypeName="GestionModel.users">
               <MappingFragment StoreEntitySet="users">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-                <ScalarProperty Name="USERFULLNAME" ColumnName="USERFULLNAME" />
-                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
-                <ScalarProperty Name="SALT" ColumnName="SALT" />
-                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-                <ScalarProperty Name="ACCOUNTTYPE" ColumnName="ACCOUNTTYPE" />
                 <ScalarProperty Name="LASTLOGIN" ColumnName="LASTLOGIN" />
+                <ScalarProperty Name="ACCOUNTTYPE" ColumnName="ACCOUNTTYPE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SALT" ColumnName="SALT" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERFULLNAME" ColumnName="USERFULLNAME" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -340,7 +417,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -32,7 +32,7 @@ namespace Gestion.Forms.Hechos_En_Clase {
 
         private void ABM_Clientes_Ficha_Load(object sender, EventArgs e) {
             oCo.Open();
-            DA = new SqlDataAdapter("SELECT * FROM clientes ORDER BY numclie ASC", oCo);
+            DA = new SqlDataAdapter("SELECT * FROM clientes ORDER BY id ASC", oCo);
             SqlCommandBuilder aux = new SqlCommandBuilder(DA);
             DA.Fill(ClientesDS, "cliente");
 

@@ -136,11 +136,13 @@ namespace Gestion {
             exceptions.Add("Settings");
             exceptions.Add("MainDockForm");
             exceptions.Add("Principal");
+            exceptions.Add("ChildForm");
+
 
             //Formularios que son hijos de otros formualarios, 
             //y por ende no deberian aparecer en el main form:
 
-            exceptions.Add("ABM_Ficha_Busqueda_Cliente");
+            //exceptions.Add("ABM_Ficha_Busqueda_Cliente");
 
 
             return exceptions;

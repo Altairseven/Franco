@@ -88,9 +88,15 @@
     <Compile Include="Classes\Get_Forms.cs" />
     <Compile Include="Classes\listapotente.cs" />
     <Compile Include="Classes\Login_func.cs" />
+    <Compile Include="Classes\PropertyComparer.cs" />
     <Compile Include="Classes\salt_hash.cs" />
     <Compile Include="Classes\Service_Control.cs" />
+    <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="Classes\Tools.cs" />
+    <Compile Include="Components\DTGDColumn.cs" />
+    <Compile Include="Components\DTGDColumn.Designer.cs">
+      <DependentUpon>DTGDColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Estadistica\Estadistica_panel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,43 +139,34 @@
     <Compile Include="Components\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\cliente.cs">
+    <Compile Include="Data\Clientes.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\empleado.cs">
+    <Compile Include="Data\empleados.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\GestionModel.Context.cs">
+    <Compile Include="Data\Entities.cs" />
+    <Compile Include="Data\GestionDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GestionModel.Context.tt</DependentUpon>
+      <DependentUpon>GestionDataset.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\GestionModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+    <Compile Include="Data\Localidades.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\GestionModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GestionModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\modulo.cs">
+    <Compile Include="Data\modulos.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\oficina.cs">
+    <Compile Include="Data\oficinas.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\pedido.cs">
+    <Compile Include="Data\pedidos.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\producto.cs">
+    <Compile Include="Data\productos.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\tree_menu.cs">
-      <DependentUpon>GestionModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\user.cs">
+    <Compile Include="Data\users.cs">
       <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\Hechos En Clase\ABM_Clientes_Ficha.cs">
@@ -184,11 +181,29 @@
     <Compile Include="Forms\MainDockForm.Designer.cs">
       <DependentUpon>MainDockForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Propios\Model_ABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Propios\Model_ABM.Designer.cs">
+      <DependentUpon>Model_ABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Propios\Model_ABM_Poppup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Propios\Model_ABM_Poppup.Designer.cs">
+      <DependentUpon>Model_ABM_Poppup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Templates\ChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Templates\ChildForm.Designer.cs">
+      <DependentUpon>ChildForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tests_Varios.cs">
       <SubType>Form</SubType>
@@ -286,12 +301,6 @@
     <Compile Include="Forms\Hechos En Clase\ABM_Ficha.Designer.cs">
       <DependentUpon>ABM_Ficha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Propios\linq_test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Propios\linq_test.Designer.cs">
-      <DependentUpon>linq_test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Propios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,18 +379,26 @@
     <Compile Include="Forms\Hechos En Clase\Teorema del Resto.Designer.cs">
       <DependentUpon>Teorema del Resto.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionDataSet1.Designer.cs">
+    <Compile Include="Data\GestionModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GestionDataSet1.xsd</DependentUpon>
+      <DependentUpon>GestionModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="LINQ.cs">
-      <DependentUpon>LINQ.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="LINQ.designer.cs">
-      <DependentUpon>LINQ.dbml</DependentUpon>
+    <Compile Include="Data\GestionModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>GestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GestionModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Tipos_Documento.cs">
+      <DependentUpon>GestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tree_menu.cs">
+      <DependentUpon>GestionModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -458,9 +475,6 @@
     <EmbeddedResource Include="Forms\Hechos En Clase\ABM_Ficha.resx">
       <DependentUpon>ABM_Ficha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Propios\linq_test.resx">
-      <DependentUpon>linq_test.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Propios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -472,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Hechos En Clase\Metodo_Burbuja.resx">
       <DependentUpon>Metodo_Burbuja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Propios\Model_ABM.resx">
+      <DependentUpon>Model_ABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Propios\MS SQL Server Control.resx">
       <DependentUpon>MS SQL Server Control.cs</DependentUpon>
@@ -497,6 +514,9 @@
     <EmbeddedResource Include="Forms\Templates\EnClasesForm.resx">
       <DependentUpon>EnClasesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Templates\ChildForm.resx">
+      <DependentUpon>ChildForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Templates\OwnForm.resx">
       <DependentUpon>OwnForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -510,32 +530,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Data\GestionDataset.xsc">
+      <DependentUpon>GestionDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Data\GestionDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GestionDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\GestionDataset.xss">
+      <DependentUpon>GestionDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Services.list" />
     <EntityDeploy Include="Data\GestionModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GestionModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Data\GestionModel.edmx.diagram">
       <DependentUpon>GestionModel.edmx</DependentUpon>
-    </None>
-    <None Include="Data\Services.list" />
-    <None Include="GestionDataSet1.xsc">
-      <DependentUpon>GestionDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="GestionDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GestionDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GestionDataSet1.xss">
-      <DependentUpon>GestionDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="LINQ.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>LINQ.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LINQ.dbml.layout">
-      <DependentUpon>LINQ.dbml</DependentUpon>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -569,6 +581,10 @@
     <Content Include="Data\Gestion.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Gestion_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Gestion.mdf</DependentUpon>
+    </Content>
     <Content Include="Data\GestionModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GestionModel.edmx</DependentUpon>
@@ -578,10 +594,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GestionModel.edmx</DependentUpon>
       <LastGenOutput>GestionModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\Gestion_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Gestion.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\Icon.ico" />
     <Content Include="Resources\address-book-alt-icon.png" />

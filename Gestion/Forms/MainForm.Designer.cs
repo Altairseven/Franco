@@ -23,9 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Formularios Hechos en Clase");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Formularios Propios");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Formularios Nuevos");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Formularios Hechos en Clase");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Formularios Propios");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Formularios Nuevos");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Ajustes = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -70,16 +70,16 @@
             this.treeView1.Location = new System.Drawing.Point(16, 53);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            treeNode7.Name = "Node0";
-            treeNode7.Text = "Formularios Hechos en Clase";
-            treeNode8.Name = "Node1";
-            treeNode8.Text = "Formularios Propios";
-            treeNode9.Name = "Node2";
-            treeNode9.Text = "Formularios Nuevos";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "Formularios Hechos en Clase";
+            treeNode2.Name = "Node1";
+            treeNode2.Text = "Formularios Propios";
+            treeNode3.Name = "Node2";
+            treeNode3.Text = "Formularios Nuevos";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8,
-            treeNode9});
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(321, 533);
             this.treeView1.TabIndex = 5;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -132,8 +132,8 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(765, 602);
             this.Controls.Add(this.button1);
