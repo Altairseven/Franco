@@ -2,9 +2,16 @@
 <%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 
 <style type="text/css">
-/*div#container {
-    align-content: center;
-}*/
+div#container {
+    border: #c9e2f4;
+    border-style: solid;
+    border-width: thin;
+    /* size: auto; */
+    margin: auto;
+    width: fit-content;
+    border-radius: 4px;
+    padding-right: 1px;
+}
 div#gbox_TB1 {
     margin: auto;
 }
@@ -15,13 +22,14 @@ div#gbox_TB1 {
 
 
 <script src="../../Scripts/Core/jquery-1.6.2.min.js"></script>
+<script src="../../Scripts/Core/jquery-ui-1.8.14.custom.min.js"></script>
 <link href="../../Content/css/Core/jquery-ui-1.8.14.custom.css" rel="stylesheet" />
 <link href="../../Content/css/Core/ui.jqgrid.css" rel="stylesheet" />
 <script src="../../Scripts/Core/grid.locale-es.js"></script>
 <script src="../../Scripts/Core/jquery.jqGrid.min.js"></script>
 <link href="../../Content/css/Core/ui-timepickercss.css" rel="stylesheet" />
 
-
+<script src="../../Scripts/Core/jquery.ui.core.js"></script>
 
 
 <div class="jumbotron">
@@ -35,15 +43,51 @@ div#gbox_TB1 {
 
 <script type="text/javascript">
 
+    $("#PopUp-Clientes").dialog({
+        autoOpen: false,
+        height: 150,
+        width: 300,
+        modal: true,
+        resizable: false,
+        closeOnEscape: false,
+        dialogClass: "popUpClass",
+        //                    show: 'slide',
+        open: function () {
+
+        },
+        beforeClose: function () {
+        },
+        buttons: [
+            {
+                id: "btn-Delete",
+                text: "Eliminar",
+                click: function () {
+                    CarpetasCred.DeleteDet();
+
+                }
+            },
+            {
+                id: "btn-Cancel",
+                text: "Cancelar",
+                click: function () {
+                    $("#TB1").jqGrid('resetSelection');
+                    CarpetasCred.SelectedID = null;
+                    $(this).dialog('close');
+                }
+            }]
+    })
+
+
+
     var TestView = {
         SelectedID: null,
-        
+
 
         Grilla: {
             selector: $("#TB1").jqGrid({
                 url: "../../Test/GetList",
                 datatype: "json",
-                colNames: ['ID', 'Nombre', 'Apellido', 'Tipo Documento', 'Documento','Localidad', 'Direccion', 'Telefono', 'Celular', 'E-mail' ],
+                colNames: ['ID', 'Nombre', 'Apellido', 'Tipo Documento', 'Documento', 'Localidad', 'Direccion', 'Telefono', 'Celular', 'E-mail'],
                 colModel: [
                     { name: 'ID', index: 'ID', width: 50, editable: false },
                     { name: 'Nombre', index: 'Nombre', width: 250, editable: true },
@@ -77,10 +121,10 @@ div#gbox_TB1 {
             }).navGrid("#PG1", {
                 edit: true, add: true, del: true, search: true, refresh: true,
                 editfunc: function () {
-                    CarpetasCred.PopupForm.Open("Edit");
+                    TestView.PopupForm.Dialog.dialog('open');
                 },
                 addfunc: function () {
-                    CarpetasCred.PopupForm.Open("Add");
+                    TestView.PopupForm.Dialog.dialog('open');
                 }
             },
                 {}, //Edit Button Ignorado porque existe "editfunc" arriba
@@ -101,7 +145,46 @@ div#gbox_TB1 {
                                 _success("El registro ha sido removido correctamente.");
                         }
                     }
-                }, { closeAfterSearch: true }), },
+                }, { closeAfterSearch: true }),
+        },
+
+        PopupForm: {
+            Dialog: $("#PopUp-Clientes").dialog({
+                autoOpen: false,
+                height: 150,
+                width: 300,
+                modal: true,
+                resizable: false,
+                closeOnEscape: false,
+                dialogClass: "popUpClass",
+                //                    show: 'slide',
+                open: function () {
+
+                },
+                beforeClose: function () {
+                },
+                buttons: [
+                    {
+                        id: "btn-Delete",
+                        text: "Eliminar",
+                        click: function () {
+                            CarpetasCred.DeleteDet();
+
+                        }
+                    },
+                    {
+                        id: "btn-Cancel",
+                        text: "Cancelar",
+                        click: function () {
+                            $("#TB1").jqGrid('resetSelection');
+                            CarpetasCred.SelectedID = null;
+                            $(this).dialog('close');
+                        }
+                    }]
+            })
+
+
+        }
 
 
         
@@ -122,4 +205,92 @@ div#gbox_TB1 {
 
 
 
+    var CustomFuctions = {
+        //Sirve para Agregar campos en un select (combobox) de a uno.
+        AppendToSelect: function (_HtmlSelectID, _innerhtml, _value) {
+
+            // _HtmlSelectID : id de la etiqueta, con el # y entre comillas
+            var select = $(_HtmlSelectID)
+            var opt = document.createElement('option');
+            opt.innerHTML = _innerhtml;
+            opt.value = _value;
+            select.append(opt)
+        },
+
+        //Llena un select con los datos de una tabla que tenga campos ID y NOMBRE
+        //se llama asi.. xq en ayj hicieron una que hace lo mismo y se llama asi
+        FeedDLL: function (_url, selector) {
+
+            CustomFuctions.AppendToSelect(selector, "", 0);
+            $.ajax({
+                type: 'GET',
+                async: 'False',
+                url: _url,
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        CustomFuctions.AppendToSelect(selector, data[i].Nombre, data[i].id);
+
+                    }
+
+                },
+                error: function (xhr, status) {
+                    alert('Fire fire ratatatata (FeedDll)');
+                }
+
+
+            });
+        }
+    }; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(document).ready(function () {
+        CustomFuctions.FeedDLL("../../Tipos_Documento/GetList", "#ID_Tipo_Documento");
+    });
+
 </script>
+
+<div id="PopUp-Clientes" class="ui-dialog" title="Clientes" style="overflow: hidden; display: none;">
+	<form id="FormClientes" name="Form-Clientes" runat="server" method="post">
+	<fieldset style="border-style: none;">
+        <div>
+        <table id="DatosClientesTb" border="0">
+            <tr>
+                <td>Nombre:</td>
+                <td><input type="text" id="Nombre" value="" style="width: 180px;"/></td>
+                <td>Apellido:</td>
+                <td><input type="text" id="Apellido" value="" style="width: 180px;"/></td>
+            </tr>
+            <tr>
+                <td>Nombre:</td>
+                <td><select id="ID_Tipo_Documento"></select></td>
+                <td>Apellido:</td>
+                <td><input type="text" id="Documento" value="" style="width: 180px;"/></td>
+            </tr>
+
+
+
+
+
+        
+        </table>
+        </div>
+	</fieldset>
+	</form>
+</div>

@@ -151,6 +151,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\Tipos_DocumentoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,7 +162,9 @@
       <DependentUpon>MVCModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\ClientesEntitiy.cs" />
+    <Compile Include="Models\Entities\Tipos_DocumentoEntity.cs" />
     <Compile Include="Models\Entities\UsuarioEntity.cs" />
+    <Compile Include="Models\InterfaceRepositories\ITestRepository.cs" />
     <Compile Include="Models\Localidades.cs">
       <DependentUpon>MVCModel.tt</DependentUpon>
     </Compile>
@@ -193,6 +196,7 @@
       <DependentUpon>MVCModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Repositories\TestRepository.cs" />
+    <Compile Include="Models\Repositories\Tipos_DocumentoRepository.cs" />
     <Compile Include="Models\Tipos_Documento.cs">
       <DependentUpon>MVCModel.tt</DependentUpon>
     </Compile>
@@ -419,7 +423,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\InterfaceRepositories\" />
+    <Folder Include="Views\Tipos_Documento\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

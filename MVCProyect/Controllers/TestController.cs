@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MVCProyect.Models.Entities;
 using MVCProyect.Models.Repositories;
+using MVCProyect.Models.InterfaceRepositories;
+
 
 namespace MVCProyect.Controllers
 {
@@ -16,7 +18,7 @@ namespace MVCProyect.Controllers
             return View();
         }
 
-        TestRepository _repository = new TestRepository();
+        ITestRepository _repository = new TestRepository();
         
 
         public JsonResult GetList(int page, int rows, string[] sidx, string[] sord, string[] searchField,

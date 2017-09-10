@@ -4,9 +4,10 @@ using System.Linq;
 using System.Web;
 using MVCProyect.Models.Entities;
 using MVCProyect.Models;
+using MVCProyect.Models.InterfaceRepositories;
 
 namespace MVCProyect.Models.Repositories {
-    public class TestRepository {
+    public class TestRepository : ITestRepository {
         //referencia al modelo.
         GestionEntities _db = new GestionEntities();
 
