@@ -1,0 +1,23 @@
+﻿.btnVerFoto
+{
+     width: 27px;
+    float: right;
+    background: url(../../../../Images/viewPhoto.jpg) no-repeat;
+    background-size: 25px 25px;
+    background-position-x: 3px;
+    background-position-y: -2px;
+    border: none;
+    padding: 0px 0px;
+    height: 25px;
+    position: absolute;
+    cursor:pointer;
+    }
+
+.btnVerFoto:hover
+{
+    height:50px;
+    width:50px;
+    background-size:50px 50px;
+    cursor:pointer;
+    transition: width 0.5s, height 0.5s;
+    }

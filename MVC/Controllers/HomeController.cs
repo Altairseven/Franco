@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 //using Gestion.Data;
-using MVC.Models.Entities;
+using MVC.Model.Entities;
 
 namespace MVC.Controllers {
     public class HomeController : Controller {

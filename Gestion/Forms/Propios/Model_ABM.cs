@@ -89,21 +89,50 @@ namespace Gestion.Forms.Propios {
         }
         
         private void On_Order(object sender, DataGridViewCellMouseEventArgs e) {
+            DataGridViewColumnCollection list = dataGridView1.Columns;
+            
+            //int indexofcolumn;
+            ////foreach (DataGridViewColumn col in dataGridView1.Columns) {
+
+            ////}
+            //dataGridView1.Columns[e.ColumnIndex].HeaderCell.SortGlyphDirection = SortOrder.Ascending;
+
+
+
             string sortfield = dataGridView1.Columns[e.ColumnIndex].Name;
             ColSortOrder order = ColSortlist.Where(x => x.ColName == sortfield).FirstOrDefault();
-            if (order.Ord == "") order.Ord = "ASC";
-            else if (order.Ord == "ASC") order.Ord = "DESC";
-            else if (order.Ord == "DESC") order.Ord = "";
-            foreach (ColSortOrder order1 in ColSortlist) {
-                if (order1.ColName != sortfield)
-                    order1.Ord = "";
+            DataGridViewColumn targetcol = dataGridView1.Columns[e.ColumnIndex];
+            if (order.Ord == "") {
+                order.Ord = "ASC";
+                targetcol.HeaderCell.SortGlyphDirection = SortOrder.Ascending;
+
+            }
+            else if (order.Ord == "ASC") {
+                order.Ord = "DESC";
+                targetcol.HeaderCell.SortGlyphDirection = SortOrder.Descending;
+            }
+            else if (order.Ord == "DESC") {
+                order.Ord = "";
+                targetcol.HeaderCell.SortGlyphDirection = SortOrder.None;
+            }
+            //foreach (ColSortOrder order1 in ColSortlist) {
+            //    if (order1.ColName != sortfield)
+            //        order1.Ord = "";
+            //        order1.HeaderCell.SortGlyphDirection = SortOrder.None;
+            //}
+            for (int i = 0; i < dataGridView1.ColumnCount; i++) {
+                if (ColSortlist[i].ColName != sortfield) {
+                    ColSortlist[i].Ord = "";
+                    //dataGridView1.Columns[i].HeaderCell.SortGlyphDirection = SortOrder.None;
+                }
+                
             }
             dataGridView1.DataSource = Get_List(sortfield, order.Ord);
             int a = 1;
         }
 
         private void EditForm_Open(object sender, DataGridViewCellEventArgs e) {
-           decimal id = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value);
+           //decimal id = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value);
 
 
         }

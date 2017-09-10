@@ -1,0 +1,167 @@
+﻿/*  CAPAS CONTENEDORAS  */
+#fondo-container
+{
+    min-width:800px;
+    width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:100px;    
+    background: url(../../../../Images/sub.png); 
+    border-radius: 20px;
+    height:500px;
+    
+}
+ #divDDL1
+{
+    margin-top:-40px;
+    margin-left:60px;
+    width:620px;
+    height:25px;
+    }
+
+#graba
+{
+    margin-top:10px;
+    height: 18px;
+    margin-left:860px;
+    }
+#cancela
+{
+    margin-top:20px;
+    margin-left:860px;
+    height: 18px;
+}
+#fondo_act
+{
+    height:100px;
+    width: 120px;
+    border-color:Gray;
+    border-style:solid;
+    border-width:thin;
+    
+}
+#fondo_img
+{
+    height:100px;
+    width: 120px;
+    margin-top: 50px;
+    margin-left: 840px;            
+}
+
+#fondo_img2
+{
+    height:100px;
+    width:120px;
+    border-color:Gray;
+    border-style:solid;
+    border-width:thin;
+    }
+
+#txt_act
+{
+    margin-left: 24px;            
+    height:20px;
+    color:White;
+}
+#txt_nue
+{
+    margin-left: 25px;            
+    color:White;
+}
+
+#izquierda  {
+  width: 170px;
+  float: left;
+  }
+ 
+.derecha {
+  width: 771px;
+  top:60px;
+  margin-left:30px;
+  
+  }
+ 
+ #fondo-actual  {
+  width: 70px;
+  float: left;
+  margin-top: 80px;
+  margin-left:50px; 
+  height:70px;
+  }
+  
+/*  ELEMENTOS DEL MENU LATERAL  */
+ 
+#menu {
+  padding:0;
+  margin:0 auto;
+  list-style-type:none;
+  width:160px;
+  height:312px;
+  }
+#menu li a {
+  height:30px;
+  width:160px;
+  float:left;
+  border-bottom:2px solid #fff;
+  overflow: hidden;
+  }
+#menu li a img {
+  border:0;
+  }
+#menu li a:hover {
+  height:120px;
+  }
+ 
+/*  ELEMENTOS DEL MENU SUPERIOR */
+ 
+#menu2 {
+  padding:0;
+  margin:0 auto;
+  list-style-type:none;
+  height:120px;
+  width:354px;
+  }
+#menu2 li a {
+  width:30px;
+  height:120px;
+  float:left;
+  border-right:2px solid #fff;
+  overflow: hidden;
+  }
+#menu2 li a img {
+  border:0;
+  }
+#menu2 li a:hover {
+  background:#eee;
+  width:160px;
+  }
+ 
+/*  ELEMENTOS DE LA GALERIA DE IMAGENES */
+ 
+#galeria {
+  padding:0;
+  margin:40px auto 0 auto;
+  list-style-type:none;
+  height:300px;
+  width:800px;
+  margin-top:20px;
+  margin-left:0px;
+  }
+#galeria li {
+  width:60px;
+  height:300px;
+  float:left;
+  border-left:2px solid #000;
+  }
+#galeria li img { /*estilo cuando se muestran las img sin hover*/
+  height:300px;
+  width:60px;
+  border:0;
+  }
+#galeria li:hover { /*estilo que se aplica a las imagenes cuando el mouse es pasado sobre ellas*/
+  background:#eee;
+  width:200px;
+  }
+#galeria li:hover img {
+  width:300px;
+  }

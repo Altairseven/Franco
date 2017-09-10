@@ -1,0 +1,746 @@
+			#body{
+				background-color: green;
+				scrollbar-face-color: #fd6904; 
+				scrollbar-highlight-color: #6685CA; 
+				scrollbar-shadow-color: #6685CA; 
+				scrollbar-3dlight-color:#2ba530;
+				scrollbar-arrow-color:#FFFFFF; 
+				scrollbar-track-color:#E5E5E5; 
+				scrollbar-drakshadow-color:#69816a;
+				
+			}
+
+			#chat-main-content{
+				position: absolute;
+				height: auto;
+				width: auto;
+				bottom: 30px;
+				right: 0;
+				/*display:none;*/
+			}
+
+			.sprite
+			{
+      			background-image: url("../../Views/CHAT/sprite_chat.png");
+      			background-repeat: no-repeat;
+      			background-color: transparent;
+      		}
+      		
+      		.sprite_chat
+      		{
+      		   background-image: url("../../Views/CHAT/icono-chat.png");
+      		   background-repeat: no-repeat;
+      		   background-color: transparent; 
+      		}
+      		
+      		
+/*ESTILOS DEL AREA DE CONTACTOS (AREA IZQUIERDA)*/
+			#area-contactos {
+			    position:absolute;
+			    right:0;
+			    bottom:-500px;
+			    width:300px;
+			    font-size:12px;
+			    overflow: hidden;
+			    transition:bottom 400ms;
+			    z-index:1;
+			}
+			
+			#openContactos{
+        	    position: relative;
+                bottom: 0;
+                border-style: none;
+                background: #000;
+                transition: all 0.5s linear 0s;
+                width: 37px;
+                height: 30px;
+                left: -100px;
+			}
+			
+			#openContactos, #openContactos:active, #openContactos:focus
+			{
+			    outline:none;
+			}
+			
+			#openContactos i{
+				position: relative;
+				width: 26px;
+				height: 22px;
+				background-position: 0 0;
+				display: block;
+			}
+			
+			#openContactos:hover 
+			{
+			    cursor: pointer;
+			}
+
+			#area-contactos button:hover{
+				cursor: pointer;
+				color: #FFF;
+				background: #5F8BD7;
+			}
+
+			#area-contactos #contactos
+			{
+			    position:relative;
+			    width: 300px;
+			    height: 550px;
+			    background-color:white;
+			    overflow: hidden;
+			}
+
+			.lista-contactos .datos {
+			    padding-left: 32px;
+		    }
+
+			.lista-contactos .datos span{
+				display: block;
+			}
+
+			#busca-contactos{
+				position: relative;
+				width:290px;
+				height: 36px;
+				top: 10px;
+				left: 5px;
+				background: #e7e7e7;
+			}
+
+			.lista-contactos:hover{
+				cursor: pointer;
+				background: #E7E6E6;
+			}
+
+			.lista-contactos.NewMessage{
+				/*background-color: green;
+				border-radius: 10%;
+				box-shadow: 0 0 5px 5px #fff,
+				            0 0 5px 5px lightgreen,
+				            0 0 5px 5px green; */
+			}
+
+		    .lista-contactos{
+		    	position: relative;
+		    	padding-bottom: 1px;
+		    	padding-top: 1px;
+		    	width:290px;
+		    	overflow: hidden;
+		    }
+
+		    .lista-contactos.selected{
+				background: #dedede;
+		    }
+
+		    #ordenada{
+		    	position: absolute;
+		    	padding-left: 0;
+		    	list-style: none;
+		    	overflow:auto;
+		    	right:0;
+		    	bottom:0;
+		    	left:5px;
+		    	top:36px;
+		    	overflow-x:hidden;
+		    }
+
+			#foto{
+				border-radius: 10px;
+				display: block;
+			}
+
+			.foto-envio{
+				width: auto;
+			    border-radius: 100px;
+			    height: 39px;
+			    margin-left: 20px;
+			    max-width: 39px;
+			    position: relative;
+			    overflow: hidden;
+			    float: right;
+			    right: 13px;
+			}
+			.foto-recibo{
+				width: auto;
+			    border-radius: 100px;
+			    height: 39px;
+			    margin-left: 20px;
+			    max-width: 39px;
+			    position: relative;
+			    overflow: hidden;
+			    float: left;
+			}
+
+			.foto img{
+			    max-height: 50px;
+			    width: auto;
+			    left: 0;
+			    top: 0;
+			    margin: 0;
+			}
+
+			.item{
+				font-family: 'Open Sans', sans-serif;
+				position: relative;
+				padding-left: 40px;
+				display: block;
+			}
+
+			.item.nombre{
+				font-size: 12px;
+				font-variant: normal;
+				font-weight: 600;
+				padding-left: 58px;
+			}
+
+			.item.nombreSelected{
+				top:10px;
+				font-weight: bold;
+			}
+
+			.item.mensajeSelected{
+				visibility: hidden;
+				display: none;
+			}
+
+			.item.tiempoSelected{
+				visibility: hidden;
+				display:none;	
+			}
+
+			.lista-contactos .nombre:before{
+				content: ' ';
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				background: #ccc;
+				left: 15px;
+				margin-top: 2px;
+				border-radius: 12px;
+			}
+
+			.lista-contactos.UserConnected .nombre:before{
+				content: ' ';
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				background: #14d60e;
+				left: 15px;
+				margin-top: 2px;
+				border-radius: 12px;
+			}
+
+			.lista-contactos-UserDisconnected .nombre:before{
+				content: ' ';
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				background: #ccc;
+				left: 39px;
+				margin-top: 5px;
+				border-radius: 12px;
+			}
+
+			.item.mensaje{
+				font-size: 11px;
+				font-variant: normal;
+				font-weight:900;
+			}
+
+			.item.tiempo{
+				font-size: 10px;
+				font-variant: normal;
+				font-weight: 100;
+			}
+
+			#btn-search{
+				position:relative;
+				height: 36px;
+				background: #e7e7e7;
+				border:none;
+				left:9px;
+			}
+
+			#btn-search i{
+				position: relative;
+				width: 29px;
+				height: 28px;
+				background-position: -26px 0;
+				display: block;
+			}
+
+			#search-contacto{
+				position: relative;
+				background-color: #e7e7e7;
+				border: none;
+				top:-12px;
+				right:-4px;
+				height: 25px;
+				width: 228px;
+				font-family: 'Open Sans', sans-serif;
+			}
+/**/
+
+/*ESTILOS DEL AREA DE CHAT (AREA DERECHA)*/
+
+			#ventana-escritura{
+				position: relative;
+				width: 500px;
+				height: 42px;
+				bottom: -47px;
+				left: 36px;
+				background:#dadada;
+								
+			}
+
+			#ventana-chat{
+				position:relative;
+				height: 400px;
+				width: 500px;
+			    right: -36px;
+			    top:49px;
+			    background: whitesmoke;
+			    align-self: center;
+			    overflow: auto;
+			    overflow-x: hidden;
+			    overflow-y:auto;
+			}
+
+      		#area-chat{
+		        position: absolute;
+		        width: 583px;
+		        height: 519px;
+		        bottom: 0px;
+		        right: -600px;
+		        background: white;
+		        border-color: black;
+      		}	
+
+      		#text-area{
+      			margin: 0px;
+                width: 446px;
+                height: 36px;
+                border: none;
+                background: #dadada;
+                resize: none;
+                position: relative;
+                bottom: -1px;
+                font-size: 16px;
+                padding-left: 10px;
+                overflow:hidden;
+				
+      		}
+      		
+      		#text-area, #text-area:focus, #text-area:active,
+      		#search-contacto, #search-contacto:focus, #search-contacto:active
+      		{
+      		    outline:none;
+      		}
+
+			#btn-enviar{
+				position: relative;
+				left: 5px;
+				height: 40px;
+				width:40px;
+				top:0px;
+				border:none;
+				background: #dadada;
+				cursor:pointer;
+			}
+
+      		#btn-enviar i{
+      			position: relative;
+                width: 29px;
+                height: 29px;
+      			background-position: 0 0;
+                left: 1px;
+                top: 0px;
+      			display:block;
+      		
+      		}
+
+      		.clearfix:after {
+			   content: " "; 
+			   visibility: hidden;
+			   display: block;
+			   height: 0;
+			   clear: both;
+			}
+
+			.new-msg{
+				position: relative;
+				top: 5px;
+				padding-bottom: 5px;
+				padding-top: 5px;
+			}
+
+			.my-msg{
+				position: relative;
+				top: 10px;
+				padding-bottom: 5px;
+				padding-top: 5px;
+			}
+
+			.chat-message{
+		         position: static;
+		        /*font-family: 'Open Sans', sans-serif;*/
+		        font-family: helvetica,arial,sans-serif;
+			    border-radius: 15px;
+			    display: inline-block;
+				word-wrap: break-word;
+			    padding-bottom: 7px;
+			}
+
+			.my-message{
+		        position: static;
+		        /*font-family: 'Open Sans', sans-serif;*/
+		         font-family: helvetica,arial,sans-serif;
+			    border-radius: 15px;
+			    display: inline-block;
+			    /*width: 396px;*/
+			    word-wrap: break-word;
+			    padding-bottom: 7px;
+			}
+
+			.text-message{
+				 /*font-family: 'Open Sans', sans-serif;*/
+				  font-family: helvetica,arial,sans-serif;
+				 font-size: 14px;
+				 word-wrap: break-word;
+			}
+
+			.text-message.Sended{
+				position: static;
+				padding: 8px;
+				width: 400px;
+				float: left;
+				border: solid 1px #ccc;
+				border-radius: 6px;
+			}
+			.message-time.Sended{
+				position: static;
+				float: left;
+				width: 60px;
+				word-wrap: break-word;
+			}
+
+			.text-message.Received{
+				position: static;
+				padding: 8px;
+				width: 400px;
+				float: right;
+				border: solid 1px #ccc;
+				border-radius: 6px;
+			}
+
+			.message-time.Received{
+					position: static;
+				float: right;
+				width: 60px;
+				word-wrap: break-word;
+			}
+
+			.message-time{
+				 font-family: 'Open Sans', sans-serif;
+				 font-size: 7px;
+			}
+
+			.text-message.Sending{
+				float: right;
+				text-align: right;
+			}
+
+			.message-time.Sending{
+				float: right;
+				text-align: right;
+			}
+
+			.text-message.Receiving{
+				float: left;
+				text-align: left;
+			}
+
+			.message-time.Receiving{
+				float: left;
+				text-align: left;
+			}
+
+			.foto-usuario{
+			    position: relative;
+			    height: 40px;
+			    width: 40px;
+			    border-color: red;
+			    border: none;
+			    border-radius: 111px;
+				float: left;
+						}
+
+			.foto-propia{
+			    position: relative;
+			    height: 40px;
+			    width: 40px;
+			    border-color: red;
+			    border: none;
+			    border-radius: 111px;
+			    float: right;
+			}
+			
+			.foto{
+			    width: auto;
+                border-radius: 20px;
+                height: 28px;
+                margin-left: 20px;
+                max-width: 39px;
+                position: relative;
+                overflow: hidden;
+                float: left;
+			    top:7px;
+			    }
+			
+			.lista-contactos .datos .nombre{
+				margin-top: 13px;
+				display: block;
+			}
+
+			.lista-contactos .datos .mensaje{
+				display: none;
+			}
+
+			.lista-contactos .datos .tiempo{
+				display: none;
+			}
+
+			.lista-contactos{
+				position: relative;
+			    height: 43px;
+			    overflow: visible;
+			}
+
+			.lista-contactos.selected {
+				margin-left: 0px;
+				display: block;
+				width: 275px;
+			}
+
+			/*.lista-contactos.selected:before {
+				content: ' ';
+				position: absolute;
+				left: -15px; top: 0;
+				width: 0; 
+				height: 0; 
+				border-top: 22.5px solid transparent;
+			    border-bottom: 22.5px solid transparent;
+			    border-right: 15px solid #dedede;
+			}*/
+
+			.lista-contactos.selected .datos .nombre{
+				margin-top: 13px;
+				font-weight: bold;
+				display: block;
+			}
+
+			.lista-contactos.selected .datos .mensaje{
+				display: block;
+			}
+			
+			.lista-contactos.selected .datos .tiempo{
+				display: block;
+			}
+
+#chat-viewport
+{
+    overflow: hidden;
+    width: 300px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 550px;
+    display:none;
+}
+
+
+/**********************************************************************/
+
+
+#ventana-escritura{
+bottom: -20px;
+}
+#ventana-chat {
+    top: 10px;
+}
+#ordenada{
+    top: 80px;
+}
+
+.lista-contactos.selected {
+    
+    display: block;
+    width: auto;
+}
+
+.header-chat{
+    height: 40px;
+    background: #fa565d;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 300;
+    line-height: 40px;
+    padding-left: 15px;
+}
+
+.lista-contactos{
+    margin-left:0px;
+}
+.foto{
+    margin-left: 10px;
+}
+.item.nombre{
+    padding-left: 35px;
+    font-weight: normal;
+    font-size: 13px;
+}
+.lista-contactos .nombre:before{
+    left: 15px;
+    margin-top: 4px;
+}
+
+#search-contacto{
+    padding-left:10px;
+}
+
+
+#ventana-chat {
+    position: relative;
+    height: 435px;
+    width: 502px;
+    right: -11px;
+    padding-left: 12px;
+    top: 10px;
+    background: #ececec;
+    align-self: center;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#area-chat {
+    position: absolute;
+    width: 543px;
+    height: 550px;
+}
+
+#ventana-escritura {
+    position: relative;
+    width: 512px;
+    height: 42px;
+    bottom: -20px;
+    left: 12px;
+    background: #dadada;
+}
+
+
+/**********************************************************************/
+
+
+
+#chat-main-content.showContactos #chat-viewport
+{
+	display:block;
+			    
+}
+
+#chat-main-content.showChat #chat-viewport
+{
+    width: 900px;
+}
+			
+			
+			
+#cruz, #btn-close-chat-window
+{
+    background: url("../../Views/CHAT/cruz.png") no-repeat center center;
+    width: 40px; height: 40px;
+    display: block; float: right;
+    opacity:0.4; text-decoration:none;
+}
+
+.message-time.Sended,
+.message-time.Received {
+    position: static;
+    width: 90px;
+    word-wrap: break-word;
+    margin-top: 3px;
+    font-size: 9px;
+    color: #A7A7A7;
+}
+
+.message-time.Received {
+    float: right;
+    margin-right: 20px;
+}
+
+.message-time.Sended
+{
+    float:left;   
+    margin-left:5px; 
+}
+
+.foto-recibo {
+    width: auto;
+    border-radius: 100px;
+    height: 39px;
+    margin-left: 0;
+    max-width: 39px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+
+.text-message.Received {
+    float: left;
+    margin-left: 10px;
+}
+
+.text-message.Sended, .text-message.Received 
+{
+    position: static;
+    padding: 10px;
+    width: 390px;
+    border: solid 1px #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.newMsgBadget
+{
+    position: absolute; right: 17px;
+    padding: 5px; background: red;
+    border-radius: 40px; padding-bottom: 5px;
+    padding-top: 5px; color: #fff;
+    font-weight: bold; top: 50%;
+    margin-top: -11px; font-size: 10px;
+    font-family: arial; display:none;
+}
+
+.lista-contactos.selected .newMsgBadget
+{
+    display:none !important;
+}
+
+.chat-new-messages-length {
+    background: red;
+    border-radius: 3px;
+    min-width: 20px;
+    color: white;
+    position: absolute;
+    right: 0;
+    margin-top: -7px;
+    text-align: center;
+    font-size: 12px;
+    font-family: arial;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    z-index: 6000;
+    display: none;
+}

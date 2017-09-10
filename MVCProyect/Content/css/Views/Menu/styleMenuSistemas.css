@@ -1,0 +1,463 @@
+/* DIV QUE CONTIENE EXPLICITAMENTE A LOS HIJOS */
+ul#elegantDark,ul#elegantDark ul
+{
+    margin:0;
+    list-style:none; 
+    width:300px;
+    }
+    
+ul#elegantDark ul
+{
+    margin:0;
+    list-style:none; 
+    width:300px;
+    background-color:transparent; /*BORRAR*/
+    margin-left:100px;
+    }
+
+/*UL MENU PPAL*/
+ul#elegantDark, ul#elegantDark .submenu
+{
+	background-color:transparent;
+	border-width:0px;
+	border-style:none;
+	border-color:#C0AF62;
+	}
+	
+/* DIV QUE CONTIENE A LOS HIJOS DONDE SE DESPLAZA EL MOUSE */
+ul#elegantDark .frame
+{
+	display:none;
+	position:absolute;
+	left:-50px;
+	top:100%;
+	background-color:transparent; /*BORRAR*/
+	width:1000px;
+	height:1000px;
+	}
+	
+/*AL PARECER, LO MISMO QUE ARRIBA. VERIFICAR */
+ul#elegantDark li:hover>*
+{ 	
+    display:block;
+    }
+
+/*HOVER DE ITEM (en cualquier item)*/
+ul#elegantDark li:hover
+{
+    position:relative;
+    font-weight:bold;
+    text-decoration:underline;
+    }
+    
+/*ESTILO DE DIV DE LOS HIJOS DEL NIVEL 1 EN ADELANTE*/
+ul#elegantDark ul .frame
+{ 	
+    position:absolute;
+    left:70%;
+    top:0;
+    background-color:transparent; /*BORRAR*/
+    }
+    
+ul#elegantDark .column ul li
+{
+    background-color:transparent; /*BORRAR*/
+    margin:2px;
+    }
+    
+/*UL MENU PPAL*/
+ul#elegantDark 
+{
+    padding:10px 10px 10px 0;
+    display:block;
+    font-size:0;
+    float:left;
+    height: 44px;
+    width: 900px;
+}
+
+/*DIV CONTAINER DE HIJOS*/
+ul#elegantDark .trCorner
+{ 	
+    left:0%; /*100%*/
+    width:150px;
+    height:50px;
+    top:0;
+    background-position:100% 0;
+    
+    /*border-left:thin solid black;*/
+    
+    }
+
+
+/*Estilo de submenu desde el nivel 1*/
+ul#elegantDark .submenu
+{
+	float:left;	
+	position:relative;
+	left:0px;
+	top:6px;
+	border:none;
+	
+	background-color:transparent;
+	background-position:100% 100%;
+	border-width:0px;
+	border-style:none;
+	padding:0 0px 0px 0;
+	width: 200px;
+	  
+	}
+	
+/*UL DENTRO DEL MENU HIJOS*/
+ul#elegantDark ul
+{ 	
+    padding:0 16px 16px 10px; 
+    
+    }
+
+/* Estilo de la clase .column de hijos */ 
+ul#elegantDark .column
+{ 
+    float:left;
+    width:100%; 
+    z-index:100000;
+    }
+
+/*Estilo de cada item padre*/
+ul#elegantDark li
+{ 	
+    display:block;
+    white-space:nowrap;
+    font-size:0;
+    float:left;
+    }
+
+/*Estilo de cada item padre*/
+ul#elegantDark>li,ul#elegantDark li
+{ 
+    margin:0 0 0 10px;
+    }
+
+/*Etiqueta "A" de items hijos*/
+ul#elegantDark a
+{ 
+    display:block;
+    vertical-align:middle;
+    text-align:left;
+    text-decoration:none;
+    font:normal 12px Arial,Helvetica,sans-serif;
+    color:#9ed9b3;
+    cursor:pointer;
+    padding:5px 10px 5px 0px;
+    background-color:#25333b;
+    background-repeat:repeat;
+    border-width:0px;
+    border-style:none;
+    border-color:#FCEEB0;
+    }
+    
+/*Estilo de items hijos NO SELECCIONADS */
+ul#elegantDark ul a
+{
+	text-align:left;
+	padding:5px 15px;
+	/*background-color:#25333b;*/
+	/*border-width:0 0 1px 0;*/
+	
+	background-color:transparent;
+	border-style:solid;
+	border-color:#3a4e59;
+	color:#9ed9b3;
+	}
+
+/*Estilo del la etiqueta A del item seleccionado*/
+ul#elegantDark li:hover>a
+{
+	/*background-color:#2a404d;*/
+	background-color:transparent;
+	border-color:#4C99AB;
+	border-style:none;
+	font:normal 12px Arial,Helvetica,sans-serif;
+	color:#8ed997;
+	text-decoration:none;
+	}
+	
+/*Estilo de img de CUALQUIER item*/
+ul#elegantDark img
+{ 
+    border:none;
+    vertical-align:middle;
+    margin-right:5px;
+    }
+
+/*Estilo span de ul*/
+ul#elegantDark span
+{
+    Display:block;
+    overflow:visible;
+    background-position:right center;
+    background-repeat:no-repeat;
+    padding-right:0px;
+    }
+
+/*Etiqueta A del menu ppal*/
+ul#elegantDark li.topmenu>a
+{
+	height:33px;
+	background-color:transparent;
+	border-width:0px;
+	border-style:none;
+	/*color:#FFFFFF;*/
+	color:Black;
+	text-decoration:none;
+	margin:0 1px 0 15px;
+	background-position:100% 0;
+	line-height:13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+   
+/*Etiqueta A del menu ppal: Evento HOVER*/ 
+ul#elegantDark li.topmenu:hover>a
+{
+	background-color:transparent;
+	border-style:none;
+	font:14px Arial,Helvetica,sans-serif;
+	/*color:#FFFFFF;*/
+	color:Silver;                                           
+	text-decoration:none;
+	line-height:13px;
+	}
+	
+/*Etiqueta LI del menu ppal*/
+ul#elegantDark li.topmenu
+{
+	margin:0 3px 0 10px;
+	background-color:transparent;
+	background-position:0 0;
+    width: 125px;
+}
+
+/*Hover etiqueta LI del menu ppal*/
+ul#elegantDark li.topmenu:hover
+{
+	background-color:transparent;
+	}
+	
+/*Estilo todos los item del menu qeu no estan seleccionados*/
+ul#elegantDark li.submenu>a
+{
+	/*background-color:#25333b;*/
+	background-color:transparent;
+	/*border-width:0 0 1px 0;
+	border-style:solid;
+	border-color:#3a4e59;*/
+	padding:5px 15px;
+	/*color:#9ed9b3;*/
+	color:Black;
+	width:80%;
+	font-weight: bold;
+	}
+	
+/*Div item seleccionado*/
+ul#elegantDark li.submenu:hover>a
+{
+	/*background-color:#2a404d;*/
+	background-color:transparent;
+	border-color:#3a4e59;
+	/*color:#9fd9b9;*/
+	color:Black;
+	font-weight:bold;	
+	width:800px;
+	}
+
+
+	
+/*Estilo div items ppal*/		
+ul#elegantDark.topmenu
+{
+    background-color:transparent;
+    }
+    
+    
+    /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
+    
+    
+    /*Nada.No.Borrar*/
+ul#elegantDark ul li
+{ 
+    float:none;
+    margin:0;
+    }
+    
+/*Nada.No.Borrar*/
+ul#elegantDark .blCorner
+{ 	
+    left:0;
+    top:100%;
+    background-position:0 100%;
+    }
+    
+    /*Nada-No.Borrar*/
+ul#elegantDark .trCorner,ul#elegantDark .blCorner
+{
+	display:block;
+	margin:0;
+	font-size:0;
+	position:absolute;
+	width:3px;
+	height:5px;
+	}
+	
+	/*Nada.No.Borrar*/		
+ul#elegantDark li._>a
+{
+	background-color:transparent;
+	border-width:0 0 1px 0;
+	border-style:solid;
+	border-color:#3a4e59;
+	padding:5px 15px;
+	color:#9ed9b3;
+	}
+
+/*Nada.No.Borrar*/		
+ul#elegantDark li._:hover>a
+{
+	border-color:#3a4e59;
+	color:#9fd9b9;
+	}
+	
+/*Nada.No.Borrar*/		
+ul#elegantDark ._>li
+{
+	margin:0;
+	}
+	
+/*Nada.No.Borrar*/		
+ul#elegantDark ._
+{
+	/*background-color:#25333b;*/
+	background-color:transparent;
+	border-width:0px;
+	border-style:none;
+	padding:0 6px 6px 0;
+	}
+
+/*Nada.No.Borrar*/		
+ul#elegantDark ._>li>a
+{
+	padding:5px 15px;
+	}
+	
+	/*Nada.No.Borrar*/
+ul#elegantDark li.ln>a
+{
+	height:33px;
+	background-color:transparent;
+	border-width:0 0 8px 0;
+	border-style:solid;
+	font:14px Arial,Helvetica,sans-serif;
+	color:#9ed9b3;
+	text-decoration:none;
+	margin:0 -15px 0 15px;
+	background-position:100% 0;
+	border-color:#3a4e59;
+	padding:5px 15px;
+	line-height:13px;
+	}
+
+/*Nada.No.Borrar*/
+ul#elegantDark li.ln:hover>a
+{
+	/*background-color:#2a404d;*/
+	background-color:transparent;
+	border-style:none;
+	font:14px Arial,Helvetica,sans-serif;
+	color:#9fd9b9;
+	text-decoration:none;
+	border-color:#3a4e59;
+	line-height:13px;
+	}
+
+/*Nada.No.Borrar*/	
+ul#elegantDark li.ln
+{
+	margin:0 15px 0 10px;
+	background-color:transparent;
+	background-position:0 0;
+	}
+
+/*Nada.No.Borrar*/		
+ul#elegantDark li.ln:hover
+{
+	background-color:transparent;
+	}
+
+/*Nada.No.Borrar*/		
+ul#elegantDark .submenu>li
+{
+	margin:0;
+	}
+	
+/*Nada.No.Borrar*/		
+ul#elegantDark .submenu>li>a
+{
+	padding:5px 5px;
+	}
+	
+	/*Nada.No.Borrar*/
+ul#elegantDark ul span
+{
+	padding-right:18px;
+	
+	/*border-color:Red;
+    border-style:dotted;
+    border-width:thick;
+    background-color:Green;*/
+	
+	}
+
+/*Nada.No.Borrar*/
+ul#elegantDark ul li:hover>a
+{
+	/*background-color:#2a404d;*/
+	background-color:transparent;
+	border-color:#3a4e59;
+	color:#9fd9b9;
+	}
+	
+	/*Nada.No.Borrar*/
+ul#elegantDark img.over
+{
+    display:none;
+    }
+
+/*Nada.No.Borrar*/
+ul#elegantDark li:hover > a img.def
+{
+    display:none;
+    }
+
+/*Nada.No.Borrar*/
+ul#elegantDark li:hover > a img.over
+{
+    display:inline;
+    }
+    
+/*Nada.No.Borrar*/
+ul#elegantDark ul>li
+{ 
+    margin:10px 0 0;
+    }
+
+/*Nada.No.Borrar*/
+ul#elegantDark a:active, ul#elegantDark a:focus
+{ 
+    outline-style:none;
+    
+    }

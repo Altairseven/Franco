@@ -1,0 +1,142 @@
+﻿/* STYLE DEL MENU */
+.expand-up {
+    /*background-color:White;*/
+    /*border:1px dotted #808080;*/
+    /*position: relative;    */
+	/*left:20%;*/
+	/*width:150px;*/
+	margin-top:225px;
+	/*border:none;*/
+}
+.expand-up * {
+}
+.expand-up ul 
+{
+    position: relative;    
+}
+.expand-up ul li { /* modificaciones del menu */
+  float:left;   /* direccion horizontal */
+  list-style-type:none;
+  /*padding-top:0px;*/
+  /*margin-top:0px;*/
+}
+.expand-up ul li a {
+  text-decoration:none;
+}
+.expand-up ul li a img {
+  /*width:50px;  /* width inicial de las imagenes, 50% de width */
+  height:45px; /* width inicial de las imagenes, 50% de height */
+  border:none;
+  }
+
+.expand-up ul li a span {
+  display:none;
+}
+.expand-up ul li:hover a span { /* texto de cada item de elementos cuando se hace foco */
+  display:block;
+  font-size:13px;
+  text-align:center;
+  color:#333;
+  font-weight:bolder;
+  font-family:Verdana;
+  margin-top:-65px;
+}
+
+.expand-up ul li:hover a img {
+  /*width:60px;*/
+ height:80px;
+}
+
+.expand-up ul li:hover + li a img {
+  width:5px;
+  height:45px;
+  margin-top:-1px;
+}
+
+.expand-up ul li:hover + li + li a img {
+  /*width:55px;
+  height:55px;  
+  margin-top:-5px;*/
+}
+
+
+/* STYLE DEL SUBMENU */
+
+.submenu {
+    background-color:transparent;
+    position: relative;    
+	top:0px;
+	left:0px;
+	width:Auto;
+	margin-left:0px;
+	height:100%;
+}
+
+.submenu * 
+{
+    
+}
+.submenu ul 
+{
+    position: relative;    
+    
+}
+.submenu ul li {
+  float:left;
+  list-style-type:none;
+  padding-top:0px;
+  margin-top:0px;
+}
+.submenu ul li a {
+  text-decoration:none;
+}
+.submenu ul li a img {
+  width:35px;  /* initial width of images, 50% of width */
+  height:35px; /* initial height of images, 50% of height */
+  border:none;
+}
+
+.submenu ul li a span {
+  display:block;
+  font-size:10px;
+  text-align:right;
+  color:#333;
+  font-weight:bolder;
+  font-family:Verdana;
+  
+}
+
+.submenu ul li:hover + li a img {
+  width:60px;
+  height:60px;
+  margin-top:-10px;
+}
+
+.submenu ul li:hover + li + li a img {
+  width:55px;
+  height:55px;
+  margin-top:-5px;
+}
+
+#divSubMenu
+{
+    background-color:transparent;
+    position: absolute;
+	top:60px;
+	left:0.5%;
+	width:410px;
+	/*margin-left:-200px;*/
+	height:auto;
+	max-height:516px;
+	overflow:hidden;
+    }
+    
+#menu
+{
+    background-color:transparent;
+	margin-left:auto;
+	margin-right:auto;
+	border:0px;
+	width:auto;
+	height:20px;   
+    }
