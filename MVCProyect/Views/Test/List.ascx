@@ -42,43 +42,7 @@ div#gbox_TB1 {
 </div>
 
 <script type="text/javascript">
-
-    $("#PopUp-Clientes").dialog({
-        autoOpen: false,
-        height: 150,
-        width: 300,
-        modal: true,
-        resizable: false,
-        closeOnEscape: false,
-        dialogClass: "popUpClass",
-        //                    show: 'slide',
-        open: function () {
-
-        },
-        beforeClose: function () {
-        },
-        buttons: [
-            {
-                id: "btn-Delete",
-                text: "Eliminar",
-                click: function () {
-                    CarpetasCred.DeleteDet();
-
-                }
-            },
-            {
-                id: "btn-Cancel",
-                text: "Cancelar",
-                click: function () {
-                    $("#TB1").jqGrid('resetSelection');
-                    CarpetasCred.SelectedID = null;
-                    $(this).dialog('close');
-                }
-            }]
-    })
-
-
-
+    
     var TestView = {
         SelectedID: null,
 
@@ -262,10 +226,22 @@ div#gbox_TB1 {
 
     $(document).ready(function () {
         CustomFuctions.FeedDLL("../../Tipos_Documento/GetList", "#ID_Tipo_Documento");
+
+        $('#test').dialog({
+            autoOpen: false,
+            height: 600,
+            width: 600,
+            modal: true
+        });
+
     });
 
 </script>
+<div id="test">
+    asdasdasd
 
+
+</div>
 <div id="PopUp-Clientes" class="ui-dialog" title="Clientes" style="overflow: hidden; display: none;">
 	<form id="FormClientes" name="Form-Clientes" runat="server" method="post">
 	<fieldset style="border-style: none;">

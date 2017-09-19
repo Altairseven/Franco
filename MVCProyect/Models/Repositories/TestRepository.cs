@@ -27,6 +27,8 @@ namespace MVCProyect.Models.Repositories {
                 // query, va a contener, a (que es el contenido de clientes), 
                 //DocNombre, y LocNombre que son los campos agregados.
 
+
+
                 var query = from a in _db.Clientes
                             join b in _db.Tipos_Documento on a.ID_Tipo_Documento equals b.ID
                             join c in _db.Localidades on a.ID_Localidad equals c.ID
